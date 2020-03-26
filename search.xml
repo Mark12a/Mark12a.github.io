@@ -709,7 +709,7 @@
       </tags>
   </entry>
   <entry>
-    <title>关于生活,关于过去</title>
+    <title>今日谷雨</title>
     <url>/2019/04/20/%E4%BB%8A%E6%97%A5%E8%B0%B7%E9%9B%A8/</url>
     <content><![CDATA[<h3 id="今日谷雨"><a href="#今日谷雨" class="headerlink" title="今日谷雨"></a>今日谷雨</h3><hr>
 <p>​    又是一年谷雨，恰逢北京今天下了小雨，使人分外想念南方的那座小城。</p>
@@ -727,6 +727,146 @@
       <tags>
         <tag>随笔</tag>
         <tag>瞎想</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeedCode刷题-1</title>
+    <url>/2019/03/03/LeetCode%20%E5%88%B7%E9%A2%98-1/</url>
+    <content><![CDATA[<h4 id="1-两数之和"><a href="#1-两数之和" class="headerlink" title="1. 两数之和"></a>1. 两数之和</h4><blockquote>
+<p>给定一个整数数组 <code>nums</code> 和一个目标值 <code>target</code>，请你在该数组中找出和为目标值的那 <strong>两个</strong> 整数，并返回他们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</p>
+<p><strong>示例:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt;给定 nums &#x3D; [2, 7, 11, 15], target &#x3D; 9</span><br><span class="line"></span><br><span class="line">&gt;因为 nums[0] + nums[1] &#x3D; 2 + 7 &#x3D; 9</span><br><span class="line">&gt;所以返回 [0, 1]</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>​    这道题其实重点考察的是哈希表的使用，HashMap（据说查找是常数级别），非常有意思</p>
+<p>​    有这几个方法：<strong>put</strong>()、<strong>containsKey</strong>()、<strong>get</strong>()，注意他们的使用</p>
+<a id="more"></a>
+
+<hr>
+<h4 id="2-回文数"><a href="#2-回文数" class="headerlink" title="2. 回文数"></a>2. 回文数</h4><blockquote>
+<p>判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: 121</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: -121</span><br><span class="line">输出: false</span><br><span class="line">解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: 10</span><br><span class="line">输出: false</span><br><span class="line">解释: 从右向左读, 为 01 。因此它不是一个回文数。</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>​    其实这道题最简单的方法是转换成字符串来做，非常非常非常简单！但是需要很多额外的空间然而我当时是傻兮兮的直接做的，很亏很亏</p>
+<p>​    第二个想法是将数字本身反转，然后将反转后的数字与原始数字进行比较，如果它们是相同的，那么这个数字就是回文。 但是，如果反转后的数字大于 int.MAXint.MAX，我们将遇到整数溢出问题。因此反转一半比较前面即可</p>
+<hr>
+<h4 id="3-从排序数组中删除重复项"><a href="#3-从排序数组中删除重复项" class="headerlink" title="3. 从排序数组中删除重复项"></a>3. 从排序数组中删除重复项</h4><blockquote>
+<p>给定一个排序数组，你需要在<strong>原地</strong>删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。</p>
+<p>不要使用额外的数组空间，你必须在<strong>原地修改输入数组</strong>并在使用 O(1) 额外空间的条件下完成。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定数组 nums &#x3D; [1,1,2], </span><br><span class="line"></span><br><span class="line">函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。 </span><br><span class="line"></span><br><span class="line">你不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定 nums &#x3D; [0,0,1,1,1,2,2,3,3,4],</span><br><span class="line"></span><br><span class="line">函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。</span><br><span class="line"></span><br><span class="line">你不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>​    这道题目用一个双指针就行，一个指向数组前面部分，一个指向相对后面部分（毕竟有重复的数），即可利用一个数组来完成这件事情，非常方便，而且我发现这个是一个很重要的方法和思想</p>
+<hr>
+<h4 id="4-买卖股票的最佳时机-II"><a href="#4-买卖股票的最佳时机-II" class="headerlink" title="4. 买卖股票的最佳时机 II"></a>4. 买卖股票的最佳时机 II</h4><blockquote>
+<p>给定一个数组，它的第 <em>i</em> 个元素是一支给定股票第 <em>i</em> 天的价格。</p>
+<p>设计一个算法来计算你所能获取的最大利润。你可以尽可能地完成更多的交易（多次买卖一支股票）。</p>
+<p><strong>注意：</strong>你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [7,1,5,3,6,4]</span><br><span class="line">输出: 7</span><br><span class="line">解释: 在第 2 天（股票价格 &#x3D; 1）的时候买入，在第 3 天（股票价格 &#x3D; 5）的时候卖出, 这笔交易所能获得利润 &#x3D; 5-1 &#x3D; 4 。</span><br><span class="line">     随后，在第 4 天（股票价格 &#x3D; 3）的时候买入，在第 5 天（股票价格 &#x3D; 6）的时候卖出, 这笔交易所能获得利润 &#x3D; 6-3 &#x3D; 3 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [1,2,3,4,5]</span><br><span class="line">输出: 4</span><br><span class="line">解释: 在第 1 天（股票价格 &#x3D; 1）的时候买入，在第 5 天 （股票价格 &#x3D; 5）的时候卖出, 这笔交易所能获得利润 &#x3D; 5-1 &#x3D; 4 。</span><br><span class="line">     注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。</span><br><span class="line">     因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [7,6,4,3,1]</span><br><span class="line">输出: 0</span><br><span class="line">解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>​    这个题目如果画个图就会非常非常明白，这里面所谓的最大利润，其实就是折线图上上升部分的总和，然后就是so easy啦，相当的巧妙</p>
+<hr>
+<h4 id="5-旋转数组"><a href="#5-旋转数组" class="headerlink" title="5. 旋转数组"></a>5. 旋转数组</h4><blockquote>
+<p>给定一个数组，将数组中的元素向右移动 <em>k</em> 个位置，其中 <em>k</em> 是非负数。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [1,2,3,4,5,6,7] 和 k &#x3D; 3</span><br><span class="line">输出: [5,6,7,1,2,3,4]</span><br><span class="line">解释:</span><br><span class="line">向右旋转 1 步: [7,1,2,3,4,5,6]</span><br><span class="line">向右旋转 2 步: [6,7,1,2,3,4,5]</span><br><span class="line">向右旋转 3 步: [5,6,7,1,2,3,4]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [-1,-100,3,99] 和 k &#x3D; 2</span><br><span class="line">输出: [3,99,-1,-100]</span><br><span class="line">解释: </span><br><span class="line">向右旋转 1 步: [99,-1,-100,3]</span><br><span class="line">向右旋转 2 步: [3,99,-1,-100]</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>​    这个题目有一个巧妙的变换方法，reverse(0, n-1), reverse(0, k), reverse(k, n-1)就OK了，完全无需任何额外的空间，非常非常牛逼！时间复杂度也是O(n)</p>
+<hr>
+<h4 id="6-存在重复"><a href="#6-存在重复" class="headerlink" title="6. 存在重复"></a>6. 存在重复</h4><blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定一个整数数组，判断是否存在重复元素。</span><br><span class="line"></span><br><span class="line">如果任何值在数组中出现至少两次，函数返回 true。如果数组中每个元素都不相同，则返回 false。</span><br><span class="line"></span><br><span class="line">示例 1:</span><br><span class="line"></span><br><span class="line">输入: [1,2,3,1]</span><br><span class="line">输出: true</span><br><span class="line">示例 2:</span><br><span class="line"></span><br><span class="line">输入: [1,2,3,4]</span><br><span class="line">输出: false</span><br><span class="line">示例 3:</span><br><span class="line"></span><br><span class="line">输入: [1,1,1,3,3,4,3,2,4,2]</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>​    这道题还是很简单的，不说了</p>
+<hr>
+<h4 id="7-只出现一次的数字"><a href="#7-只出现一次的数字" class="headerlink" title="7. 只出现一次的数字"></a>7. 只出现一次的数字</h4><blockquote>
+<p>给定一个<strong>非空</strong>整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
+<p><strong>说明：</strong></p>
+<p>你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [2,2,1]</span><br><span class="line">输出: 1</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [4,1,2,1,2]</span><br><span class="line">输出: 4</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>  这个题目有一个巧妙的变换方法，reverse(0, n-1), reverse(0, k), reverse(k, n-1)就OK了，完全无需任何额外的空间，非常非常牛逼！时间复杂度也是O(n)</p>
+<hr>
+<h4 id="8-两个数组的交集-II"><a href="#8-两个数组的交集-II" class="headerlink" title="8. 两个数组的交集 II"></a>8. 两个数组的交集 II</h4><blockquote>
+<p>给定两个数组，编写一个函数来计算它们的交集。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: nums1 &#x3D; [1,2,2,1], nums2 &#x3D; [2,2]</span><br><span class="line">输出: [2,2]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: nums1 &#x3D; [4,9,5], nums2 &#x3D; [9,4,9,8,4]</span><br><span class="line">输出: [4,9]</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>​    知道双指针的牛逼之处了吧！（用于两个数组就是了，本质还是一样的）</p>
+<hr>
+<h4 id="9-加一"><a href="#9-加一" class="headerlink" title="9. 加一"></a>9. 加一</h4><blockquote>
+<p>给定一个由<strong>整数</strong>组成的<strong>非空</strong>数组所表示的非负整数，在该数的基础上加一。</p>
+<p>最高位数字存放在数组的首位， 数组中每个元素只存储一个数字。</p>
+<p>你可以假设除了整数 0 之外，这个整数不会以零开头。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [1,2,3]</span><br><span class="line">输出: [1,2,4]</span><br><span class="line">解释: 输入数组表示数字 123。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [4,3,2,1]</span><br><span class="line">输出: [4,3,2,2]</span><br><span class="line">解释: 输入数组表示数字 4321。</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>​    这题我本来还想着转换成整数加一来解决，但是很显然，会遇到超出整数表示范围的情况</p>
+<p>​    所以最后当然就直接做了，当然写法还是很讲究的，像我之前就写了一堆废代码，看到别人的代码才觉得，woc，居然还能这么写，简单好多，真的。</p>
+<hr>
+<h4 id="10-移动零"><a href="#10-移动零" class="headerlink" title="10. 移动零"></a>10. 移动零</h4><blockquote>
+<p>给定一个数组 <code>nums</code>，编写一个函数将所有 <code>0</code> 移动到数组的末尾，同时保持非零元素的相对顺序。</p>
+<p><strong>示例:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: [0,1,0,3,12]</span><br><span class="line">输出: [1,3,12,0,0]</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>​    这个题目，也是双指针，双指针真尼玛牛逼！简单了不止一点点，我当时还傻逼一样换来换去mmp</p>
+<hr>
+<h4 id="11-有效数独"><a href="#11-有效数独" class="headerlink" title="11. 有效数独"></a>11. 有效数独</h4><blockquote>
+<p><strong>题目略</strong></p>
+<p>（正常数独的规则）</p>
+</blockquote>
+<p>​    这个题目，我先开始还不知道怎么做，其实按照正常规则来就行，当然要用到一点计算机的思想</p>
+<hr>
+<h4 id="12-旋转图像"><a href="#12-旋转图像" class="headerlink" title="12. 旋转图像"></a>12. 旋转图像</h4><blockquote>
+<p>给定一个 <em>n</em> × <em>n</em> 的二维矩阵表示一个图像。</p>
+<p>将图像顺时针旋转 90 度。</p>
+<p><strong>说明：</strong></p>
+<p>你必须在<strong>原地</strong>旋转图像，这意味着你需要直接修改输入的二维矩阵。<strong>请不要</strong>使用另一个矩阵来旋转图像。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定 matrix &#x3D; </span><br><span class="line">[</span><br><span class="line">  [1,2,3],</span><br><span class="line">  [4,5,6],</span><br><span class="line">  [7,8,9]</span><br><span class="line">],</span><br><span class="line"></span><br><span class="line">原地旋转输入矩阵，使其变为:</span><br><span class="line">[</span><br><span class="line">  [7,4,1],</span><br><span class="line">  [8,5,2],</span><br><span class="line">  [9,6,3]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">给定 matrix &#x3D;</span><br><span class="line">[</span><br><span class="line">  [ 5, 1, 9,11],</span><br><span class="line">  [ 2, 4, 8,10],</span><br><span class="line">  [13, 3, 6, 7],</span><br><span class="line">  [15,14,12,16]</span><br><span class="line">], </span><br><span class="line"></span><br><span class="line">原地旋转输入矩阵，使其变为:</span><br><span class="line">[</span><br><span class="line">  [15,13, 2, 5],</span><br><span class="line">  [14, 3, 4, 1],</span><br><span class="line">  [12, 6, 8, 9],</span><br><span class="line">  [16, 7,10,11]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>​    这个旋转，我开始只找到了每个元素变换之后的位置，但是完全没有考虑到会发生变换再变换的情况（因为是遍历变换的）真的是蠢爆了！</p>
+<p>​    这个其实需要变换两步来完成，和上面的reverse有异曲同工之妙，也有点像加入一个中间的子空间，最终得到我们需要的结果。这对于思考很多数学问题非常有帮助</p>
+<p>​                                                            </p>
+]]></content>
+      <categories>
+        <category>刷OJ</category>
+      </categories>
+      <tags>
+        <tag>学习</tag>
+        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
