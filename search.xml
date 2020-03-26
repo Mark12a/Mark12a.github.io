@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>About Me</title>
+    <url>/2020/03/26/about/</url>
+    <content><![CDATA[<blockquote>
+<p>A Student, major in CS, Beijing Jiaotong University, China.</p>
+</blockquote>
+<p>姓名：倪炜<br>现居：Beijing<br>GitHub: <a href="https://github.com/Mark12a" target="_blank" rel="noopener">Mark12a</a><br>Twitter: <a href="https://twitter.com/Maze_Runner8976" target="_blank" rel="noopener">Mark Smith</a><br>QQ: <a href="http://wpa.qq.com/msgrd?v=3&uin=834381638&site=qq&menu=yes" target="_blank" rel="noopener">834381638</a></p>
+<a id="more"></a>
+
+<!-- ![avatar.jpg](https://tva1.sinaimg.cn/large/00831rSTgy1gd7de3lb3nj30u10u041d.jpg) -->
+
+<img src="https://pic.downk.cc/item/5e739676e83c3a1e3ab4b361.jpg" alt="avatar" width="300" style="border-radius:50%"/>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>test</title>
     <url>/2020/03/25/test/</url>
     <content><![CDATA[<h3 id="这是一个测试"><a href="#这是一个测试" class="headerlink" title="这是一个测试"></a>这是一个测试</h3>]]></content>
@@ -151,23 +168,6 @@
       </categories>
       <tags>
         <tag>技术</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>About Me</title>
-    <url>/2019/12/01/about/</url>
-    <content><![CDATA[<blockquote>
-<p>A Student, major in CS, BJTU, China.</p>
-</blockquote>
-<p>姓名：倪炜<br>现居：Beijing<br>GitHub: <a href="https://github.com/Shen-Yu" target="_blank" rel="noopener">Shen-Yu</a><br>twitter: <a href="https://twitter.com/shenyu1995" target="_blank" rel="noopener">shenyu1995</a><br>QQ: <a href="http://wpa.qq.com/msgrd?v=3&uin=448766534&site=qq&menu=yes" target="_blank" rel="noopener">448766534</a><br>微信: yuknass</p>
-<a id="more"></a>
-
-<!-- ![avatar.jpg](https://i.loli.net/2019/12/02/Hw5WJIMKzi1YrU8.jpg) -->
-
-<img src="https://pic.downk.cc/item/5e739676e83c3a1e3ab4b361.jpg" alt="avatar" width="300" style="border-radius:50%"/>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -348,8 +348,8 @@
         <category>学习</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>学习</tag>
+        <tag>随笔</tag>
         <tag>摄影</tag>
       </tags>
   </entry>
