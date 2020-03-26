@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Maze Runner</title>
+  <icon>https://www.gravatar.com/avatar/e8b3db36b75585c929c6a03baa54335c</icon>
+  <subtitle>I am Runner in the Life Maze</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-03-26T01:09:06.251Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Mark</name>
+    <email>niwei0203@icloud.com</email>
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="http://yoursite.com/2020/03/25/test/"/>
+    <id>http://yoursite.com/2020/03/25/test/</id>
+    <published>2020-03-25T13:59:12.000Z</published>
+    <updated>2020-03-26T01:09:06.251Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;###这是一个测试&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2020/03/25/hello-world/"/>
+    <id>http://yoursite.com/2020/03/25/hello-world/</id>
+    <published>2020-03-25T13:16:39.496Z</published>
+    <updated>2020-03-25T13:16:39.496Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
