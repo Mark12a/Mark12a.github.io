@@ -139,6 +139,9 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo:</span><br><span class="line">    gitee: git@gitee.com:用户名&#x2F;用户名.git</span><br><span class="line">    github: git@github.com:用户名&#x2F;仓库名.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 
 <p>完成</p>
+<blockquote>
+<p><strong>注意：</strong>每次提交给Gitee之后，都需要手动再次部署(如果你用的是和我一样穷的免费版的话)，不然的话效果不会改变的。</p>
+</blockquote>
 <h2 id="9-贴标签，方便搜索"><a href="#9-贴标签，方便搜索" class="headerlink" title="9 贴标签，方便搜索"></a>9 贴标签，方便搜索</h2><h3 id="9-1-两个确认"><a href="#9-1-两个确认" class="headerlink" title="9.1 两个确认"></a>9.1 两个确认</h3><ul>
 <li>确认站点配置文件有 (在根目录下的_config.yml中查找)</li>
 </ul>
