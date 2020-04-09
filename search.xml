@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo-博客搭建历程-下</title>
+    <url>/2020/03/31/Hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B-%E4%B8%8B/</url>
+    <content><![CDATA[<h2 id="1-Valine简介"><a href="#1-Valine简介" class="headerlink" title="1 Valine简介"></a>1 Valine简介</h2><p>​    继续上次的搭建历程，主要是进行留言板的搭建，我看了不少的留言板，包括来比力、Gittalk等等，最后还是觉得Valine比较简约好看，而且查了一下，Ayer主题也支持，就决定用这个了。</p>
+<a id="more"></a>
+
+<h2 id="2-LeanCloud基本应用创建"><a href="#2-LeanCloud基本应用创建" class="headerlink" title="2 LeanCloud基本应用创建"></a>2 LeanCloud基本应用创建</h2><h3 id="2-1-注册LeanCloud"><a href="#2-1-注册LeanCloud" class="headerlink" title="2.1 注册LeanCloud"></a>2.1 注册LeanCloud</h3><p>​    首先去<a href="https://leancloud.cn/" target="_blank" rel="noopener">LeanCloud官网</a>进行注册一个账号</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gddi1ufzhnj30lq0f90tg.jpg" alt=""></p>
+<h3 id="2-2-创建新的应用"><a href="#2-2-创建新的应用" class="headerlink" title="2.2 创建新的应用"></a>2.2 创建新的应用</h3><p>​    在登陆之后可以看到下图中的这样一个界面，点击红框中的“创建应用”。</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gddi3bo8zzj30lp0bo0ub.jpg" alt=""></p>
+<p>​    然后在弹出框中填写你要创建的名称即可，使用免费的开发版就OK了</p>
+<p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gddi4tnx94j30lx0glgmr.jpg" alt=""></p>
+<h3 id="2-3-获取应用的KEY"><a href="#2-3-获取应用的KEY" class="headerlink" title="2.3 获取应用的KEY"></a>2.3 获取应用的KEY</h3>]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Markdown语法</title>
     <url>/2020/03/26/Markdown%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><hr>
@@ -394,7 +415,6 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>技术</tag>
         <tag>Hexo</tag>
         <tag>学习</tag>
       </tags>

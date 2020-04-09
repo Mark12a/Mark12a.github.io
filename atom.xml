@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-26T12:48:03.000Z</updated>
+  <updated>2020-03-31T14:57:09.792Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo-博客搭建历程-下</title>
+    <link href="http://yoursite.com/2020/03/31/Hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B-%E4%B8%8B/"/>
+    <id>http://yoursite.com/2020/03/31/Hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B-%E4%B8%8B/</id>
+    <published>2020-03-31T14:47:12.000Z</published>
+    <updated>2020-03-31T14:57:09.792Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-Valine简介&quot;&gt;&lt;a href=&quot;#1-Valine简介&quot; class=&quot;headerlink&quot; title=&quot;1 Valine简介&quot;&gt;&lt;/a&gt;1 Valine简介&lt;/h2&gt;&lt;p&gt;​    继续上次的搭建历程，主要是进行留言板的搭建，我看了不少的留言板，包括来比力、Gittalk等等，最后还是觉得Valine比较简约好看，而且查了一下，Ayer主题也支持，就决定用这个了。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>Markdown语法</title>
@@ -72,7 +95,7 @@
     <link href="http://yoursite.com/2020/03/26/Hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B-%E4%B8%8A/"/>
     <id>http://yoursite.com/2020/03/26/Hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B-%E4%B8%8A/</id>
     <published>2020-03-26T12:05:10.000Z</published>
-    <updated>2020-03-26T12:44:13.000Z</updated>
+    <updated>2020-03-31T14:48:16.219Z</updated>
     
     <summary type="html">
     
@@ -83,8 +106,6 @@
     
       <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    
-      <category term="技术" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF/"/>
     
       <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
