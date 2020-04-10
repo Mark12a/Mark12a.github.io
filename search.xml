@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>各种工具站</title>
+    <url>/2020/04/10/%E5%90%84%E7%A7%8D%E5%B7%A5%E5%85%B7%E7%AB%99/</url>
+    <content><![CDATA[<h2 id="YouTube："><a href="#YouTube：" class="headerlink" title="YouTube："></a>YouTube：</h2><ul>
+<li><strong>YouTube视频下载</strong><ul>
+<li>如果能翻墙的话：<a href="https://www.y2mate.com/convert-youtube/cxNWXxBoaHg" target="_blank" rel="noopener">y2mate</a>，<a href="https://www.findyoutube.net/" target="_blank" rel="noopener">findYouTube</a></li>
+<li>不能翻墙的话。。。暂时还没找到</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+
+<ul>
+<li><strong>YouTube字幕下载</strong><ul>
+<li><a href="https://zhuwei.me/y2b/" target="_blank" rel="noopener">zhuwei</a>（可以选择多种格式的字幕文件）</li>
+</ul>
+</li>
+</ul>
+<h2 id="字幕"><a href="#字幕" class="headerlink" title="字幕"></a>字幕</h2><ul>
+<li><strong>字幕格式转换</strong><ul>
+<li><a href="[http://convert.4get.kr/zh/convert/ass/%E8%AF%B7%E5%85%88%E9%80%89%E6%8B%A9%E5%AD%97%E5%B9%95%E6%96%87%E4%BB%B6%E3%80%82](http://convert.4get.kr/zh/convert/ass/请先选择字幕文件。)">Convert/4get</a></li>
+</ul>
+</li>
+</ul>
+<p>暂时先这么多，待继续更新。。。</p>
+]]></content>
+      <categories>
+        <category>乱七八糟</category>
+      </categories>
+      <tags>
+        <tag>站点</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo-博客搭建历程-下</title>
     <url>/2020/03/31/Hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B-%E4%B8%8B/</url>
     <content><![CDATA[<h2 id="1-Valine简介"><a href="#1-Valine简介" class="headerlink" title="1 Valine简介"></a>1 Valine简介</h2><p>​    继续上次的搭建历程，主要是进行留言板的搭建，我看了不少的留言板，包括来比力、Gittalk等等，最后还是觉得Valine比较简约好看，而且查了一下，Ayer主题也支持，就决定用这个了。</p>
