@@ -75,6 +75,8 @@
 </li>
 <li><p><a href="http://www.planetb.ca/syntax-highlight-word" target="_blank" rel="noopener">PlanetB</a> 可以高亮代码，方便复制到word里面（虽然感觉VS code更好</p>
 </li>
+<li><p><a href="https://www.fosshub.com" target="_blank" rel="noopener">Fosshub</a> 各种免费工具合集</p>
+</li>
 </ul>
 <p>暂时先这么多，待继续更新。。。</p>
 ]]></content>
@@ -286,9 +288,9 @@
         <category>技术</category>
       </categories>
       <tags>
+        <tag>测试</tag>
         <tag>技术</tag>
         <tag>学习</tag>
-        <tag>测试</tag>
       </tags>
   </entry>
   <entry>
