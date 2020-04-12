@@ -141,7 +141,7 @@
 <p>你也可以选择在行首加井号表示不同级别的标题 (H1-H6)，例如：# H1, ## H2, ### H3，#### H4。</p>
 <h3 id="3-外链接"><a href="#3-外链接" class="headerlink" title="3. 外链接"></a>3. 外链接</h3><p>使用 [描述](链接地址) 为文字增加外链接。</p>
 <p>示例：</p>
-<p>这是去往 <a href="http://Shen-Yu.github.com" target="_blank" rel="noopener">本人博客</a> 的链接。</p>
+<p>这是去往 <a href="https://mazerunner.gitee.io/" target="_blank" rel="noopener">本人博客</a> 的链接。</p>
 <p><img src="https://n1-q.mafengwo.net/s15/M00/65/BB/CoUBGV3brtOAMKOdAAsHBZ8nyQk791.jpg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt=""></p>
 <h3 id="4-无序列表"><a href="#4-无序列表" class="headerlink" title="4. 无序列表"></a>4. 无序列表</h3><p>使用 *，+，- 表示无序列表。</p>
 <p>示例：</p>
@@ -1014,8 +1014,8 @@
         <category>学习</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>学习</tag>
+        <tag>随笔</tag>
         <tag>摄影</tag>
       </tags>
   </entry>
