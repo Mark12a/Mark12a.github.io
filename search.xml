@@ -43,8 +43,14 @@
 </li>
 </ul>
 <h2 id="PPT相关"><a href="#PPT相关" class="headerlink" title="PPT相关"></a>PPT相关</h2><ul>
-<li><strong>ppt模板下载</strong><ul>
+<li><p><strong>ppt模板下载</strong></p>
+<ul>
 <li><a href="http://www.ypppt.com" target="_blank" rel="noopener">yppt</a> 免费的模板下载！</li>
+</ul>
+</li>
+<li><p><strong>ppt导航站</strong></p>
+<ul>
+<li><a href="http://www.hippter.com" target="_blank" rel="noopener">HiPPTer</a> 这真的是见过的最全导航站了，我感觉这个大类可以删了只留这一个了</li>
 </ul>
 </li>
 </ul>
@@ -69,6 +75,15 @@
 <li><a href="https://app.essclick.com/web" target="_blank" rel="noopener">我也不知道叫什么名字-3</a></li>
 </ul>
 </li>
+</ul>
+<h2 id="电子书"><a href="#电子书" class="headerlink" title="电子书"></a>电子书</h2><ul>
+<li><strong>教材</strong><ul>
+<li><a href="http://freecomputerbooks.com/langCBooks.html" target="_blank" rel="noopener">FreeComputerBooks</a> 专注于计算机、变成、数学、电子工程、软件工程等技术书籍的网站</li>
+</ul>
+</li>
+</ul>
+<h2 id="格式转换"><a href="#格式转换" class="headerlink" title="格式转换"></a>格式转换</h2><ul>
+<li><a href="https://cn.office-converter.com" target="_blank" rel="noopener">格式转换大全</a> office文档格式、视频格式、音频格式、图片格式、电子书格式……各种都有</li>
 </ul>
 <h2 id="杂七杂八"><a href="#杂七杂八" class="headerlink" title="杂七杂八"></a>杂七杂八</h2><ul>
 <li><p><a href="http://zh.wikihow.com" target="_blank" rel="noopener">Wikihow</a> 各种乱七八糟事情的指导手册，挺好玩的</p>
@@ -999,8 +1014,8 @@
         <category>学习</category>
       </categories>
       <tags>
-        <tag>学习</tag>
         <tag>随笔</tag>
+        <tag>学习</tag>
         <tag>摄影</tag>
       </tags>
   </entry>
