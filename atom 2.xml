@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Maze Runner</title>
+  <icon>https://www.gravatar.com/avatar/e8b3db36b75585c929c6a03baa54335c</icon>
+  <subtitle>I am Runner in the Life Maze</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-04-12T01:42:04.710Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Mark</name>
+    <email>niwei0203@icloud.com</email>
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>各种工具站</title>
+    <link href="http://yoursite.com/2020/04/10/%E5%90%84%E7%A7%8D%E5%B7%A5%E5%85%B7%E7%AB%99/"/>
+    <id>http://yoursite.com/2020/04/10/%E5%90%84%E7%A7%8D%E5%B7%A5%E5%85%B7%E7%AB%99/</id>
+    <published>2020-04-10T09:22:33.000Z</published>
+    <updated>2020-04-12T01:42:04.710Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;YouTube&quot;&gt;&lt;a href=&quot;#YouTube&quot; class=&quot;headerlink&quot; title=&quot;YouTube&quot;&gt;&lt;/a&gt;YouTube&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;YouTube视频下载&lt;/strong&gt;&lt;ul&gt;
+&lt;li&gt;如果能翻墙的话：&lt;a href=&quot;https://www.y2mate.com/convert-youtube/cxNWXxBoaHg&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;y2mate&lt;/a&gt;，&lt;a href=&quot;https://www.findyoutube.net/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;findYouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;不能翻墙的话。。。暂时还没找到&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="乱七八糟" scheme="http://yoursite.com/categories/%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F/"/>
+    
+    
+      <category term="站点" scheme="http://yoursite.com/tags/%E7%AB%99%E7%82%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo-博客搭建历程-下</title>
+    <link href="http://yoursite.com/2020/03/31/Hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B-%E4%B8%8B/"/>
+    <id>http://yoursite.com/2020/03/31/Hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B-%E4%B8%8B/</id>
+    <published>2020-03-31T14:47:12.000Z</published>
+    <updated>2020-03-31T14:57:09.792Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;1-Valine简介&quot;&gt;&lt;a href=&quot;#1-Valine简介&quot; class=&quot;headerlink&quot; title=&quot;1 Valine简介&quot;&gt;&lt;/a&gt;1 Valine简介&lt;/h2&gt;&lt;p&gt;​    继续上次的搭建历程，主要是进行留言板的搭建，我看了不少的留言板，包括来比力、Gittalk等等，最后还是觉得Valine比较简约好看，而且查了一下，Ayer主题也支持，就决定用这个了。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown语法</title>
+    <link href="http://yoursite.com/2020/03/26/Markdown%E8%AF%AD%E6%B3%95/"/>
+    <id>http://yoursite.com/2020/03/26/Markdown%E8%AF%AD%E6%B3%95/</id>
+    <published>2020-03-26T13:07:14.000Z</published>
+    <updated>2020-04-12T02:20:13.152Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;一级标题&quot;&gt;&lt;a href=&quot;#一级标题&quot; class=&quot;headerlink&quot; title=&quot;一级标题&quot;&gt;&lt;/a&gt;一级标题&lt;/h1&gt;&lt;hr&gt;
+&lt;h3 id=&quot;1-斜体和粗体&quot;&gt;&lt;a href=&quot;#1-斜体和粗体&quot; class=&quot;headerlink&quot; title=&quot;1. 斜体和粗体&quot;&gt;&lt;/a&gt;1. 斜体和粗体&lt;/h3&gt;&lt;p&gt;使用 * 和 ** 表示斜体和粗体。&lt;/p&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;p&gt;这是 &lt;em&gt;斜体&lt;/em&gt;，这是 &lt;strong&gt;粗体&lt;/strong&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="技术" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello, World！</title>
+    <link href="http://yoursite.com/2020/03/26/Hello-World%EF%BC%81/"/>
+    <id>http://yoursite.com/2020/03/26/Hello-World%EF%BC%81/</id>
+    <published>2020-03-26T12:16:19.000Z</published>
+    <updated>2020-03-26T12:46:53.496Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h2&gt;&lt;p&gt;为什么建这个站呢？&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="瞎想" scheme="http://yoursite.com/tags/%E7%9E%8E%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo 博客搭建历程(上)</title>
+    <link href="http://yoursite.com/2020/03/26/Hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B-%E4%B8%8A/"/>
+    <id>http://yoursite.com/2020/03/26/Hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B-%E4%B8%8A/</id>
+    <published>2020-03-26T12:05:10.000Z</published>
+    <updated>2020-03-31T14:48:16.219Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Hexo-博客搭建历程-上&quot;&gt;&lt;a href=&quot;#Hexo-博客搭建历程-上&quot; class=&quot;headerlink&quot; title=&quot;Hexo 博客搭建历程(上)&quot;&gt;&lt;/a&gt;Hexo 博客搭建历程(上)&lt;/h1&gt;&lt;p&gt;Hexo的简洁、神秘让我跃跃欲试，在使用过程中遇到了很多问题，整理此文，一是方便其他技术人搭建自己的博客，二是给自己的学习之旅做个总结。本文&lt;strong&gt;未完结&lt;/strong&gt;，欢迎&lt;code&gt;star&lt;/code&gt;、&lt;code&gt;fork&lt;/code&gt;，如果有错误，请不吝指出。&lt;br&gt;我搭建的博客地址：&lt;a href=&quot;https://mark12a.github.io&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;strong&gt;mark12a.github.io&lt;/strong&gt;&lt;/a&gt;&lt;br&gt;然后鉴于GitHub国内太慢，我又放到了Gitee上面&lt;a href=&quot;https://mazerunner.gitee.io&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;strong&gt;mazerunner.gitee.io&lt;/strong&gt;&lt;/a&gt;&lt;br&gt;二者都可以访问&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>About Me</title>
+    <link href="http://yoursite.com/2020/03/26/about/"/>
+    <id>http://yoursite.com/2020/03/26/about/</id>
+    <published>2020-03-26T11:37:04.000Z</published>
+    <updated>2020-03-26T14:52:37.707Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;A Student, major in CS, Beijing Jiaotong University, China.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;姓名：&lt;/strong&gt;倪炜&lt;br&gt;&lt;strong&gt;现居：&lt;/strong&gt;Beijing&lt;br&gt;&lt;strong&gt;GitHub：&lt;/strong&gt; &lt;a href=&quot;https://github.com/Mark12a&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Mark12a&lt;/a&gt;&lt;br&gt;&lt;strong&gt;Twitter:&lt;/strong&gt; &lt;a href=&quot;https://twitter.com/Maze_Runner8976&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Mark Smith&lt;/a&gt;&lt;br&gt;&lt;strong&gt;FaceBook：&lt;/strong&gt; &lt;a href=&quot;https://www.facebook.com/profile.php?id=100030730761687&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Ni Wei&lt;/a&gt;&lt;br&gt;&lt;strong&gt;QQ：&lt;/strong&gt; &lt;a href=&quot;http://wpa.qq.com/msgrd?v=3&amp;uin=834381638&amp;site=qq&amp;menu=yes&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;834381638&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2020/03/26/hello-world/"/>
+    <id>http://yoursite.com/2020/03/26/hello-world/</id>
+    <published>2020-03-26T02:05:10.000Z</published>
+    <updated>2020-03-26T12:12:59.731Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="技术" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>test</title>
+    <link href="http://yoursite.com/2020/03/25/test/"/>
+    <id>http://yoursite.com/2020/03/25/test/</id>
+    <published>2020-03-25T13:59:12.000Z</published>
+    <updated>2020-03-26T02:49:27.804Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;这是一个测试&quot;&gt;&lt;a href=&quot;#这是一个测试&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ayer中文说明</title>
+    <link href="http://yoursite.com/2019/12/03/Ayer%E4%B8%AD%E6%96%87%E8%AF%B4%E6%98%8E/"/>
+    <id>http://yoursite.com/2019/12/03/Ayer%E4%B8%AD%E6%96%87%E8%AF%B4%E6%98%8E/</id>
+    <published>2019-12-03T05:26:02.000Z</published>
+    <updated>2020-03-26T12:09:33.163Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Shen-Yu/hexo-theme-ayer&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Ayer&lt;/a&gt; 是一个干净且优雅的Hexo主题，自带响应式，加载速度很快，该有的功能都有，可配置项很多，非常适合作为你的博客主题，主题内还附送了6张精美的高清壁纸。欢迎使用和Star支持，如果你在使用过程中有任何疑问或者建议，欢迎联系我！如果你的博客采用了本主题，欢迎在下面评论区留下地址~&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Shen-Yu/hexo-theme-ayer&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Ayer&lt;/a&gt; 在马来语中是“水”的意思，在西班牙语中是“昨天”的意思。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://pic.downk.cc/item/5e739724e83c3a1e3ab53941.jpg&quot; alt=&quot;hexo-theme-ayer&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Shen-Yu/hexo-theme-ayer&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://gitee.com/shen-yu/hexo-theme-ayer&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;国内镜像&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://shen-yu.gitee.io&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;效果预览&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://shen-yu.gitee.io/2019/ayer/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;中文说明&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="技术" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>电影|V字仇杀队</title>
+    <link href="http://yoursite.com/2019/07/14/%E7%94%B5%E5%BD%B1%20V%E5%AD%97%E4%BB%87%E6%9D%80%E9%98%9F/"/>
+    <id>http://yoursite.com/2019/07/14/%E7%94%B5%E5%BD%B1%20V%E5%AD%97%E4%BB%87%E6%9D%80%E9%98%9F/</id>
+    <published>2019-07-14T02:16:19.000Z</published>
+    <updated>2020-03-26T14:33:27.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;电影-V字仇杀队&quot;&gt;&lt;a href=&quot;#电影-V字仇杀队&quot; class=&quot;headerlink&quot; title=&quot;电影|V字仇杀队&quot;&gt;&lt;/a&gt;电影|V字仇杀队&lt;/h3&gt;&lt;hr&gt;
+&lt;p&gt;​    鉴于考完期末之后有天晚上着实不想看书，于是打开电脑，数了一下想看的电影，瞥见了V字仇杀队，好，那就你了&lt;/p&gt;
+&lt;p&gt;​    本来就已经通过各种途径对这部电影有所耳闻，那个面具的照片更是全网到处可见，本以为这是一部相当平常的带有一点恐怖元素的电影，但是待我看完，发现事情没有那么简单，我有点被震撼到了&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="瞎想" scheme="http://yoursite.com/tags/%E7%9E%8E%E6%83%B3/"/>
+    
+      <category term="电影" scheme="http://yoursite.com/tags/%E7%94%B5%E5%BD%B1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于生活,关于过去</title>
+    <link href="http://yoursite.com/2019/06/23/%E5%85%B3%E4%BA%8E%E7%94%9F%E6%B4%BB%EF%BC%8C%E5%85%B3%E4%BA%8E%E8%BF%87%E5%8E%BB/"/>
+    <id>http://yoursite.com/2019/06/23/%E5%85%B3%E4%BA%8E%E7%94%9F%E6%B4%BB%EF%BC%8C%E5%85%B3%E4%BA%8E%E8%BF%87%E5%8E%BB/</id>
+    <published>2019-06-23T00:25:55.000Z</published>
+    <updated>2020-03-26T12:18:16.773Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;​    考试周的日子总是很煎熬，既不敢充分的去做自己想做的事情，还得坐在自习室一遍一遍看着枯燥的内容，时不时还得担心一下绩点和排名&lt;/p&gt;
+&lt;p&gt;​    大概正因为日子是枯燥的，才让我去怀念过去。昨晚终于忍不住把自己从小到大发的说说都看了一遍，真的充分感受到了自己小时候是多么中二&lt;/p&gt;
+&lt;p&gt;​    要不是翻开这些篇章，我大概不会记得，原来我有阵子那么喜欢发句号，一连串的那种，回什么都是一串句号；原来曾经我还有句口头禅叫”什么鬼”，万事万物皆可”什么鬼”；还曾经疯狂转发金山词霸的每日一句，恍惚记起好像是为了掩盖些什么东西；小学的我原来还会疯狂转发别人的说说从不写原创…诸如此类乱七八糟的事情&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="瞎想" scheme="http://yoursite.com/tags/%E7%9E%8E%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>贵妇失宠</title>
+    <link href="http://yoursite.com/2019/04/20/%E8%B4%B5%E5%A6%87%E5%A4%B1%E5%AE%A0/"/>
+    <id>http://yoursite.com/2019/04/20/%E8%B4%B5%E5%A6%87%E5%A4%B1%E5%AE%A0/</id>
+    <published>2019-04-20T12:16:19.000Z</published>
+    <updated>2020-03-26T14:20:12.046Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;贵妇失宠&quot;&gt;&lt;a href=&quot;#贵妇失宠&quot; class=&quot;headerlink&quot; title=&quot;贵妇失宠&quot;&gt;&lt;/a&gt;贵妇失宠&lt;/h3&gt;&lt;hr&gt;
+&lt;p&gt;​    茨威格的短篇小说总有一种特殊的魔力，尤其是涉及到人物的心理的时候，那种细致的刻画简直让你觉得书中那个人的心被一点一点剥开展示在你面前；当他讲述日常生活的时候，总是能找到这看似平静大海下的波澜涌动，令人感慨万分。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="瞎想" scheme="http://yoursite.com/tags/%E7%9E%8E%E6%83%B3/"/>
+    
+      <category term="阅读" scheme="http://yoursite.com/tags/%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>今日谷雨</title>
+    <link href="http://yoursite.com/2019/04/20/%E4%BB%8A%E6%97%A5%E8%B0%B7%E9%9B%A8/"/>
+    <id>http://yoursite.com/2019/04/20/%E4%BB%8A%E6%97%A5%E8%B0%B7%E9%9B%A8/</id>
+    <published>2019-04-20T06:48:55.000Z</published>
+    <updated>2020-03-26T13:56:17.641Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;今日谷雨&quot;&gt;&lt;a href=&quot;#今日谷雨&quot; class=&quot;headerlink&quot; title=&quot;今日谷雨&quot;&gt;&lt;/a&gt;今日谷雨&lt;/h3&gt;&lt;hr&gt;
+&lt;p&gt;​    又是一年谷雨，恰逢北京今天下了小雨，使人分外想念南方的那座小城。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="瞎想" scheme="http://yoursite.com/tags/%E7%9E%8E%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeedCode刷题-1</title>
+    <link href="http://yoursite.com/2019/03/03/LeetCode%20%E5%88%B7%E9%A2%98-1/"/>
+    <id>http://yoursite.com/2019/03/03/LeetCode%20%E5%88%B7%E9%A2%98-1/</id>
+    <published>2019-03-03T12:25:55.000Z</published>
+    <updated>2020-03-26T13:24:22.150Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;1-两数之和&quot;&gt;&lt;a href=&quot;#1-两数之和&quot; class=&quot;headerlink&quot; title=&quot;1. 两数之和&quot;&gt;&lt;/a&gt;1. 两数之和&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;给定一个整数数组 &lt;code&gt;nums&lt;/code&gt; 和一个目标值 &lt;code&gt;target&lt;/code&gt;，请你在该数组中找出和为目标值的那 &lt;strong&gt;两个&lt;/strong&gt; 整数，并返回他们的数组下标。&lt;/p&gt;
+&lt;p&gt;你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例:&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt;给定 nums &amp;#x3D; [2, 7, 11, 15], target &amp;#x3D; 9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt;因为 nums[0] + nums[1] &amp;#x3D; 2 + 7 &amp;#x3D; 9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt;所以返回 [0, 1]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;​    这道题其实重点考察的是哈希表的使用，HashMap（据说查找是常数级别），非常有意思&lt;/p&gt;
+&lt;p&gt;​    有这几个方法：&lt;strong&gt;put&lt;/strong&gt;()、&lt;strong&gt;containsKey&lt;/strong&gt;()、&lt;strong&gt;get&lt;/strong&gt;()，注意他们的使用&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="刷OJ" scheme="http://yoursite.com/categories/%E5%88%B7OJ/"/>
+    
+    
+      <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>手机摄影学习笔记</title>
+    <link href="http://yoursite.com/2016/09/07/%E6%89%8B%E6%9C%BA%E6%91%84%E5%BD%B1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2016/09/07/%E6%89%8B%E6%9C%BA%E6%91%84%E5%BD%B1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2016-09-07T07:06:00.000Z</published>
+    <updated>2020-03-21T08:14:46.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;焦距&quot;&gt;&lt;a href=&quot;#焦距&quot; class=&quot;headerlink&quot; title=&quot;焦距&quot;&gt;&lt;/a&gt;焦距&lt;/h2&gt;&lt;p&gt;1.广角：28mm，长焦800&lt;br&gt;2.光圈&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="学习" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="摄影" scheme="http://yoursite.com/tags/%E6%91%84%E5%BD%B1/"/>
+    
+  </entry>
+  
+</feed>
