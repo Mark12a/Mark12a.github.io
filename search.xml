@@ -3,8 +3,11 @@
   <entry>
     <title>正则文法与上下文无关文法</title>
     <url>/2020/04/14/%E6%AD%A3%E5%88%99%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95/</url>
-    <content><![CDATA[<p>##正则文法</p>
-<p>有时一个正则表达式很复杂，我们希望能够把这个正则表达式用记号记下来，以便以后使用，于是就有了正则定义（Regular Definitions）：<br>设Σ是符号表，如果有一系列的定义：<br>    d1 → r1<br>    d2 → r2<br>    …<br>    dn→ rn<br>并且：<br>任一个di都是一个新的符号，它既不属于Σ，也不属于{d1,d2,d3,…,d(i-1)}<br>任一个ri都是一个正则表达式，能够由符号表Σ以及{d1,d2,d3,…,d(i-1)}所表示<br>这样就构成了一组正则表达式定义。</p>
+    <content><![CDATA[<h2 id="正则文法"><a href="#正则文法" class="headerlink" title="正则文法"></a>正则文法</h2><p>有时一个正则表达式很复杂，我们希望能够把这个正则表达式用记号记下来，以便以后使用，于是就有了正则定义（Regular Definitions）：<br>设Σ是符号表，如果有一系列的定义：<br>    d1 → r1<br>    d2 → r2<br>    …<br>    dn→ rn<br>并且：<br>任一个di都是一个新的符号，它既不属于Σ，也不属于{d1,d2,d3,…,d(i-1)}<br>任一个ri都是一个正则表达式，能够由符号表Σ以及{d1,d2,d3,…,d(i-1)}所表示<br>这样就构成了一组正则表达式定义。</p>
+<a id="more"></a>
+
+
+
 <h2 id="上下文无关文法"><a href="#上下文无关文法" class="headerlink" title="上下文无关文法"></a>上下文无关文法</h2><p><strong>组成要素：</strong></p>
 <ul>
 <li>一个终结符的有限集（A set of terminal symbols），构成文法的最基本的字符就是这个文法的终结符，例如- 一个能够产生个位数的文法规则digit –&gt; 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9，则数字0～9就是这个文法的终结符，一个能够产生变量名的文法规则variable –&gt; (‘A’-‘Z’ | ‘a’-‘z’) *((‘A’-‘Z’ | ‘a’-‘z’ | ‘0’-‘9’)，则所有的英文字母和数字就是文法的终结符。</li>
@@ -341,8 +344,8 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>学习</tag>
         <tag>技术</tag>
+        <tag>学习</tag>
         <tag>测试</tag>
       </tags>
   </entry>
@@ -602,9 +605,9 @@
         <category>技术</category>
       </categories>
       <tags>
+        <tag>技术</tag>
         <tag>Hexo</tag>
         <tag>学习</tag>
-        <tag>技术</tag>
       </tags>
   </entry>
   <entry>
@@ -739,9 +742,9 @@
         <category>技术</category>
       </categories>
       <tags>
+        <tag>技术</tag>
         <tag>Hexo</tag>
         <tag>学习</tag>
-        <tag>技术</tag>
       </tags>
   </entry>
   <entry>
@@ -1050,8 +1053,8 @@
         <category>学习</category>
       </categories>
       <tags>
-        <tag>随笔</tag>
         <tag>学习</tag>
+        <tag>随笔</tag>
         <tag>摄影</tag>
       </tags>
   </entry>
