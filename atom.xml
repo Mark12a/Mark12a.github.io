@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-14T14:39:27.575Z</updated>
+  <updated>2020-04-23T15:37:55.025Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,15 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Vijo--4.23</title>
+    <link href="http://yoursite.com/2020/04/23/Viijos%20--%204-23/"/>
+    <id>http://yoursite.com/2020/04/23/Viijos%20--%204-23/</id>
+    <published>2020-04-23T15:02:42.000Z</published>
+    <updated>2020-04-23T15:37:55.025Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Vijos-P1282-amp-P1131-amp-P1090-amp-P1307-amp-P1095&quot;&gt;&lt;a href=&quot;#Vijos-P1282-amp-P1131-amp-P1090-amp-P1307-amp-P1095&quot; class=&quot;headerlink&quot; title=&quot;Vijos P1282 &amp;amp; P1131 &amp;amp; P1090 &amp;amp; P1307 &amp;amp; P1095&quot;&gt;&lt;/a&gt;Vijos P1282 &amp;amp; P1131 &amp;amp; P1090 &amp;amp; P1307 &amp;amp; P1095&lt;/h2&gt;&lt;h3 id=&quot;P1282&quot;&gt;&lt;a href=&quot;#P1282&quot; class=&quot;headerlink&quot; title=&quot;P1282&quot;&gt;&lt;/a&gt;P1282&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;*&lt;em&gt;描述: *&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;一共有n个人（以1–n编号）向佳佳要照片，而佳佳只能把照片给其中的k个人。佳佳按照与他们的关系好坏的程度给每个人赋予了一个初始权值W[i]。然后将初始权值从大到小进行排序，每人就有了一个序号D[i]（取值同样是1–n）。按照这个序号对10取模的值将这些人分为10类。也就是说定义每个人的类别序号C[i]的值为(D[i]-1) mod 10 +1，显然类别序号的取值为1–10。第i类的人将会额外得到E[i]的权值。你需要做的就是求出加上额外权值以后，最终的权值最大的k个人，并输出他们的编号。在排序中，如果两人的W[i]相同，编号小的优先。&lt;/p&gt;
+&lt;p&gt;n&amp;lt;=50 000，k&amp;lt;=2000，给出的所有正整数都不超过32767。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="刷OJ" scheme="http://yoursite.com/categories/%E5%88%B7OJ/"/>
+    
+    
+      <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Vijos" scheme="http://yoursite.com/tags/Vijos/"/>
+    
+  </entry>
+  
+  <entry>
     <title>正则文法与上下文无关文法</title>
     <link href="http://yoursite.com/2020/04/14/%E6%AD%A3%E5%88%99%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95/"/>
     <id>http://yoursite.com/2020/04/14/%E6%AD%A3%E5%88%99%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95/</id>
     <published>2020-04-14T14:26:48.000Z</published>
-    <updated>2020-04-14T14:39:27.575Z</updated>
+    <updated>2020-04-15T03:23:58.894Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;正则文法&quot;&gt;&lt;a href=&quot;#正则文法&quot; class=&quot;headerlink&quot; title=&quot;正则文法&quot;&gt;&lt;/a&gt;正则文法&lt;/h2&gt;&lt;p&gt;有时一个正则表达式很复杂，我们希望能够把这个正则表达式用记号记下来，以便以后使用，于是就有了正则定义（Regular Definitions）：&lt;br&gt;设Σ是符号表，如果有一系列的定义：&lt;br&gt;    d1 → r1&lt;br&gt;    d2 → r2&lt;br&gt;    …&lt;br&gt;    dn→ rn&lt;br&gt;并且：&lt;br&gt;任一个di都是一个新的符号，它既不属于Σ，也不属于{d1,d2,d3,…,d(i-1)}&lt;br&gt;任一个ri都是一个正则表达式，能够由符号表Σ以及{d1,d2,d3,…,d(i-1)}所表示&lt;br&gt;这样就构成了一组正则表达式定义。&lt;/p&gt;
+      &lt;h2 id=&quot;正则文法&quot;&gt;&lt;a href=&quot;#正则文法&quot; class=&quot;headerlink&quot; title=&quot;正则文法&quot;&gt;&lt;/a&gt;正则文法&lt;/h2&gt;&lt;p&gt;有时一个正则表达式很复杂，我们希望能够把这个正则表达式用记号记下来，以便以后使用，于是就有了正则定义（Regular Definitions）：&lt;br&gt;设Σ是符号表，如果有一系列的定义：&lt;br&gt;    d1 → r1&lt;br&gt;    d2 → r2&lt;br&gt;        …&lt;br&gt;    dn→ rn&lt;br&gt;并且：&lt;br&gt;    任一个di都是一个新的符号，它既不属于Σ，也不属于{d1,d2,d3,…,d(i-1)}&lt;br&gt;    任一个ri都是一个正则表达式，能够由符号表Σ以及{d1,d2,d3,…,d(i-1)}所表示&lt;br&gt;这样就构成了一组正则表达式定义。&lt;/p&gt;
     
     </summary>
     
@@ -109,11 +135,11 @@
       <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
+      <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
+    
       <category term="技术" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF/"/>
     
       <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
