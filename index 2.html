@@ -151,6 +151,99 @@
 
 </article>
     
+    <article id="post-正则文法与上下文无关文法" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/04/14/%E6%AD%A3%E5%88%99%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95/"
+    >正则文法与上下文无关文法</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/04/14/%E6%AD%A3%E5%88%99%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95/" class="article-date">
+  <time datetime="2020-04-14T14:26:48.000Z" itemprop="datePublished">2020-04-14</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+  </div>
+
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <p>##正则文法</p>
+<p>有时一个正则表达式很复杂，我们希望能够把这个正则表达式用记号记下来，以便以后使用，于是就有了正则定义（Regular Definitions）：<br>设Σ是符号表，如果有一系列的定义：<br>    d1 → r1<br>    d2 → r2<br>    …<br>    dn→ rn<br>并且：<br>任一个di都是一个新的符号，它既不属于Σ，也不属于{d1,d2,d3,…,d(i-1)}<br>任一个ri都是一个正则表达式，能够由符号表Σ以及{d1,d2,d3,…,d(i-1)}所表示<br>这样就构成了一组正则表达式定义。</p>
+<h2 id="上下文无关文法"><a href="#上下文无关文法" class="headerlink" title="上下文无关文法"></a>上下文无关文法</h2><p><strong>组成要素：</strong></p>
+<ul>
+<li>一个终结符的有限集（A set of terminal symbols），构成文法的最基本的字符就是这个文法的终结符，例如- 一个能够产生个位数的文法规则digit –&gt; 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9，则数字0～9就是这个文法的终结符，一个能够产生变量名的文法规则variable –&gt; (‘A’-‘Z’ | ‘a’-‘z’) *((‘A’-‘Z’ | ‘a’-‘z’ | ‘0’-‘9’)，则所有的英文字母和数字就是文法的终结符。</li>
+<li>一个非终结符的有限集（A set of nonterminals），例如上面的digit、variable就是非终结符。</li>
+<li>一个产生式的有限集，例如上面的“digit –&gt; …”和“variable –&gt; …”两个规则可以构成一个产生式集</li>
+<li>一个非终结符作为开始符号，在非终结符集中，必须指定其中一个作为开始符号。</li>
+</ul>
+<p>几个问题：</p>
+<ol>
+<li><p><strong>为什么是“上下文无关”而不是“上下文有关”呢？</strong></p>
+<blockquote>
+<p>这是因为在利用一个上下文无关文法生成语言的时候，我们可以随意将文法规则左边的非终结符派生（更换）为右边的终结符或非终结符</p>
+</blockquote>
+</li>
+</ol>
+<ol start="2">
+<li><p><strong>正则文法和上下文无关文法的区别？</strong></p>
+<blockquote>
+<p> 在正则定义中是不允许递归定义的。例如A → aA|b不是一个正则定义，为其左边的A必须是一个新的符号，也就是说不能在其他地方定义过，但是其右边要求每一个符号都是定义过的，因此这个定义无法满足。而上下文无关文法则没有这个约束，因此A → aA|b是一个上下文无关文法的产生式，但不是正则定义的定义式。</p>
+</blockquote>
+</li>
+</ol>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" rel="tag">编译原理</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+  
+  
+
+  
+
+</article>
+    
     <article id="post-各种工具站" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
@@ -718,80 +811,6 @@
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
-
-
-    </footer>
-
-  </div>
-
-  
-
-  
-  
-  
-
-  
-
-</article>
-    
-    <article id="post-电影 V字仇杀队" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2019/07/14/%E7%94%B5%E5%BD%B1%20V%E5%AD%97%E4%BB%87%E6%9D%80%E9%98%9F/"
-    >电影|V字仇杀队</a> 
-</h2>
- 
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2019/07/14/%E7%94%B5%E5%BD%B1%20V%E5%AD%97%E4%BB%87%E6%9D%80%E9%98%9F/" class="article-date">
-  <time datetime="2019-07-14T02:16:19.000Z" itemprop="datePublished">2019-07-14</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
-  </div>
-
-      
-      
-      
-    </div>
-    
-
-    
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-
-      
-      <h3 id="电影-V字仇杀队"><a href="#电影-V字仇杀队" class="headerlink" title="电影|V字仇杀队"></a>电影|V字仇杀队</h3><hr>
-<p>​    鉴于考完期末之后有天晚上着实不想看书，于是打开电脑，数了一下想看的电影，瞥见了V字仇杀队，好，那就你了</p>
-<p>​    本来就已经通过各种途径对这部电影有所耳闻，那个面具的照片更是全网到处可见，本以为这是一部相当平常的带有一点恐怖元素的电影，但是待我看完，发现事情没有那么简单，我有点被震撼到了</p>
-      
-      <a class="article-more-link" href="/2019/07/14/%E7%94%B5%E5%BD%B1%20V%E5%AD%97%E4%BB%87%E6%9D%80%E9%98%9F/">阅读更多...</a>
-      
-      
-      <!-- reward -->
-      
-    </div>
-    
-    
-      <!-- copyright -->
-      
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%B5%E5%BD%B1/" rel="tag">电影</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%9E%8E%E6%83%B3/" rel="tag">瞎想</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
 
 
     </footer>
