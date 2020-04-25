@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-23T23:22:02.560Z</updated>
+  <updated>2020-04-25T14:55:07.208Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Leetcode-P239</title>
+    <link href="http://yoursite.com/2020/04/25/Leetcode-P239/"/>
+    <id>http://yoursite.com/2020/04/25/Leetcode-P239/</id>
+    <published>2020-04-25T14:37:26.000Z</published>
+    <updated>2020-04-25T14:55:07.208Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目简介&quot;&gt;&lt;a href=&quot;#题目简介&quot; class=&quot;headerlink&quot; title=&quot;题目简介&quot;&gt;&lt;/a&gt;题目简介&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;*&lt;em&gt;描述: *&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;给定一个数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。&lt;/p&gt;
+&lt;p&gt;返回滑动窗口中的最大值。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= nums.length &amp;lt;= 10^5&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-10^4 &amp;lt;= nums[i] &amp;lt;= 10^4&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 &amp;lt;= k &amp;lt;= nums.length&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="刷OJ" scheme="http://yoursite.com/categories/%E5%88%B7OJ/"/>
+    
+    
+      <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Vijos--4.23</title>
     <link href="http://yoursite.com/2020/04/23/Viijos%20--%204-23/"/>
     <id>http://yoursite.com/2020/04/23/Viijos%20--%204-23/</id>
     <published>2020-04-23T15:02:42.000Z</published>
-    <updated>2020-04-23T23:22:02.560Z</updated>
+    <updated>2020-04-23T23:23:43.549Z</updated>
     
     <summary type="html">
     
@@ -443,9 +474,9 @@
       <category term="学习" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
-    
       <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
       <category term="摄影" scheme="http://yoursite.com/tags/%E6%91%84%E5%BD%B1/"/>
     
