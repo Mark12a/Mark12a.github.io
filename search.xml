@@ -42,14 +42,13 @@
         <category>刷OJ</category>
       </categories>
       <tags>
-        <tag>学习</tag>
         <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
     <title>Vijos--4.23</title>
     <url>/2020/04/23/Viijos%20--%204-23/</url>
-    <content><![CDATA[<h2 id="Vijos-P1282-amp-P1131-amp-P1090-amp-P1307-amp-P1095"><a href="#Vijos-P1282-amp-P1131-amp-P1090-amp-P1307-amp-P1095" class="headerlink" title="Vijos P1282 &amp; P1131 &amp; P1090 &amp; P1307 &amp; P1095"></a>Vijos P1282 &amp; P1131 &amp; P1090 &amp; P1307 &amp; P1095</h2><h3 id="P1282"><a href="#P1282" class="headerlink" title="P1282"></a>P1282</h3><blockquote>
+    <content><![CDATA[<h2 id="P1282-amp-P1131-amp-P1090-amp-P1307-amp-P1095"><a href="#P1282-amp-P1131-amp-P1090-amp-P1307-amp-P1095" class="headerlink" title="P1282 &amp; P1131 &amp; P1090 &amp; P1307 &amp; P1095"></a>P1282 &amp; P1131 &amp; P1090 &amp; P1307 &amp; P1095</h2><h3 id="P1282"><a href="#P1282" class="headerlink" title="P1282"></a>P1282</h3><blockquote>
 <p>*<em>描述: *</em></p>
 <p>一共有n个人（以1–n编号）向佳佳要照片，而佳佳只能把照片给其中的k个人。佳佳按照与他们的关系好坏的程度给每个人赋予了一个初始权值W[i]。然后将初始权值从大到小进行排序，每人就有了一个序号D[i]（取值同样是1–n）。按照这个序号对10取模的值将这些人分为10类。也就是说定义每个人的类别序号C[i]的值为(D[i]-1) mod 10 +1，显然类别序号的取值为1–10。第i类的人将会额外得到E[i]的权值。你需要做的就是求出加上额外权值以后，最终的权值最大的k个人，并输出他们的编号。在排序中，如果两人的W[i]相同，编号小的优先。</p>
 <p>n&lt;=50 000，k&lt;=2000，给出的所有正整数都不超过32767。</p>
@@ -209,7 +208,6 @@
         <category>刷OJ</category>
       </categories>
       <tags>
-        <tag>学习</tag>
         <tag>Vijos</tag>
       </tags>
   </entry>
@@ -248,7 +246,6 @@
         <category>学习</category>
       </categories>
       <tags>
-        <tag>学习</tag>
         <tag>编译原理</tag>
       </tags>
   </entry>
@@ -354,6 +351,7 @@
       </categories>
       <tags>
         <tag>站点</tag>
+        <tag>工具</tag>
       </tags>
   </entry>
   <entry>
@@ -374,7 +372,7 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>学习</tag>
+        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
@@ -554,12 +552,10 @@
 <p>[^footnote2]: 这是另一个 <em>注脚</em> 的 <strong>文本</strong>。</p>
 ]]></content>
       <categories>
-        <category>技术</category>
+        <category>学习</category>
       </categories>
       <tags>
         <tag>测试</tag>
-        <tag>技术</tag>
-        <tag>学习</tag>
       </tags>
   </entry>
   <entry>
@@ -603,7 +599,7 @@
   <entry>
     <title>Hexo 博客搭建历程(上)</title>
     <url>/2020/03/26/Hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B-%E4%B8%8A/</url>
-    <content><![CDATA[<h1 id="Hexo-博客搭建历程-上"><a href="#Hexo-博客搭建历程-上" class="headerlink" title="Hexo 博客搭建历程(上)"></a>Hexo 博客搭建历程(上)</h1><p>Hexo的简洁、神秘让我跃跃欲试，在使用过程中遇到了很多问题，整理此文，一是方便其他技术人搭建自己的博客，二是给自己的学习之旅做个总结。本文<strong>未完结</strong>，欢迎<code>star</code>、<code>fork</code>，如果有错误，请不吝指出。<br>我搭建的博客地址：<a href="https://mark12a.github.io" target="_blank" rel="noopener"><strong>mark12a.github.io</strong></a><br>然后鉴于GitHub国内太慢，我又放到了Gitee上面<a href="https://mazerunner.gitee.io" target="_blank" rel="noopener"><strong>mazerunner.gitee.io</strong></a><br>二者都可以访问</p>
+    <content><![CDATA[<p>Hexo的简洁、神秘让我跃跃欲试，在使用过程中遇到了很多问题，整理此文，一是方便其他技术人搭建自己的博客，二是给自己的学习之旅做个总结。本文<strong>未完结</strong>，欢迎<code>star</code>、<code>fork</code>，如果有错误，请不吝指出。<br>我搭建的博客地址：<a href="https://mark12a.github.io" target="_blank" rel="noopener"><strong>mark12a.github.io</strong></a><br>然后鉴于GitHub国内太慢，我又放到了Gitee上面<a href="https://mazerunner.gitee.io" target="_blank" rel="noopener"><strong>mazerunner.gitee.io</strong></a><br>二者都可以访问</p>
 <a id="more"></a>
 
 <h2 id="1-Hexo介绍"><a href="#1-Hexo介绍" class="headerlink" title="1 Hexo介绍"></a>1 Hexo介绍</h2><p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>是基于<code>NodeJs</code>的静态博客框架，简单、轻量，其生成的静态网页可以托管在<code>Github</code>和<code>Heroku</code>上。</p>
@@ -772,7 +768,7 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>学习</tag>
+        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
@@ -818,9 +814,7 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>技术</tag>
         <tag>Hexo</tag>
-        <tag>学习</tag>
       </tags>
   </entry>
   <entry>
@@ -955,7 +949,6 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>技术</tag>
         <tag>Hexo</tag>
         <tag>学习</tag>
       </tags>
@@ -963,8 +956,7 @@
   <entry>
     <title>电影|V字仇杀队</title>
     <url>/2019/07/14/%E7%94%B5%E5%BD%B1%20V%E5%AD%97%E4%BB%87%E6%9D%80%E9%98%9F/</url>
-    <content><![CDATA[<h3 id="电影-V字仇杀队"><a href="#电影-V字仇杀队" class="headerlink" title="电影|V字仇杀队"></a>电影|V字仇杀队</h3><hr>
-<p>​    鉴于考完期末之后有天晚上着实不想看书，于是打开电脑，数了一下想看的电影，瞥见了V字仇杀队，好，那就你了</p>
+    <content><![CDATA[<p>​    鉴于考完期末之后有天晚上着实不想看书，于是打开电脑，数了一下想看的电影，瞥见了V字仇杀队，好，那就你了</p>
 <p>​    本来就已经通过各种途径对这部电影有所耳闻，那个面具的照片更是全网到处可见，本以为这是一部相当平常的带有一点恐怖元素的电影，但是待我看完，发现事情没有那么简单，我有点被震撼到了</p>
 <a id="more"></a>
 
@@ -1056,8 +1048,7 @@
   <entry>
     <title>贵妇失宠</title>
     <url>/2019/04/20/%E8%B4%B5%E5%A6%87%E5%A4%B1%E5%AE%A0/</url>
-    <content><![CDATA[<h3 id="贵妇失宠"><a href="#贵妇失宠" class="headerlink" title="贵妇失宠"></a>贵妇失宠</h3><hr>
-<p>​    茨威格的短篇小说总有一种特殊的魔力，尤其是涉及到人物的心理的时候，那种细致的刻画简直让你觉得书中那个人的心被一点一点剥开展示在你面前；当他讲述日常生活的时候，总是能找到这看似平静大海下的波澜涌动，令人感慨万分。</p>
+    <content><![CDATA[<p>​    茨威格的短篇小说总有一种特殊的魔力，尤其是涉及到人物的心理的时候，那种细致的刻画简直让你觉得书中那个人的心被一点一点剥开展示在你面前；当他讲述日常生活的时候，总是能找到这看似平静大海下的波澜涌动，令人感慨万分。</p>
 <a id="more"></a>
 
 <p>​    最近有看到他一篇小说，很有感触，小说名为——<a href="https://www.douban.com/group/topic/49672102/" target="_blank" rel="noopener">《贵妇失宠》</a></p>
@@ -1091,8 +1082,7 @@
   <entry>
     <title>今日谷雨</title>
     <url>/2019/04/20/%E4%BB%8A%E6%97%A5%E8%B0%B7%E9%9B%A8/</url>
-    <content><![CDATA[<h3 id="今日谷雨"><a href="#今日谷雨" class="headerlink" title="今日谷雨"></a>今日谷雨</h3><hr>
-<p>​    又是一年谷雨，恰逢北京今天下了小雨，使人分外想念南方的那座小城。</p>
+    <content><![CDATA[<p>​    又是一年谷雨，恰逢北京今天下了小雨，使人分外想念南方的那座小城。</p>
 <a id="more"></a>
 
 <p>​    去明湖吃饭的路上，倏忽间发现，3月还光秃秃的梧桐，树叶早已遮天蔽日。想起白居易的那句</p>
@@ -1247,7 +1237,6 @@
         <category>刷OJ</category>
       </categories>
       <tags>
-        <tag>学习</tag>
         <tag>LeetCode</tag>
       </tags>
   </entry>
@@ -1266,7 +1255,6 @@
         <category>学习</category>
       </categories>
       <tags>
-        <tag>学习</tag>
         <tag>随笔</tag>
         <tag>摄影</tag>
       </tags>

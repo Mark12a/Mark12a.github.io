@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-25T14:58:46.733Z</updated>
+  <updated>2020-04-26T00:33:42.111Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2020/04/25/Leetcode-P239/"/>
     <id>http://yoursite.com/2020/04/25/Leetcode-P239/</id>
     <published>2020-04-25T14:37:26.000Z</published>
-    <updated>2020-04-25T14:58:46.733Z</updated>
+    <updated>2020-04-26T00:33:42.111Z</updated>
     
     <summary type="html">
     
@@ -41,8 +41,6 @@
       <category term="刷OJ" scheme="http://yoursite.com/categories/%E5%88%B7OJ/"/>
     
     
-      <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
       <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
     
   </entry>
@@ -52,11 +50,11 @@
     <link href="http://yoursite.com/2020/04/23/Viijos%20--%204-23/"/>
     <id>http://yoursite.com/2020/04/23/Viijos%20--%204-23/</id>
     <published>2020-04-23T15:02:42.000Z</published>
-    <updated>2020-04-23T23:23:43.549Z</updated>
+    <updated>2020-04-26T00:30:37.585Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Vijos-P1282-amp-P1131-amp-P1090-amp-P1307-amp-P1095&quot;&gt;&lt;a href=&quot;#Vijos-P1282-amp-P1131-amp-P1090-amp-P1307-amp-P1095&quot; class=&quot;headerlink&quot; title=&quot;Vijos P1282 &amp;amp; P1131 &amp;amp; P1090 &amp;amp; P1307 &amp;amp; P1095&quot;&gt;&lt;/a&gt;Vijos P1282 &amp;amp; P1131 &amp;amp; P1090 &amp;amp; P1307 &amp;amp; P1095&lt;/h2&gt;&lt;h3 id=&quot;P1282&quot;&gt;&lt;a href=&quot;#P1282&quot; class=&quot;headerlink&quot; title=&quot;P1282&quot;&gt;&lt;/a&gt;P1282&lt;/h3&gt;&lt;blockquote&gt;
+      &lt;h2 id=&quot;P1282-amp-P1131-amp-P1090-amp-P1307-amp-P1095&quot;&gt;&lt;a href=&quot;#P1282-amp-P1131-amp-P1090-amp-P1307-amp-P1095&quot; class=&quot;headerlink&quot; title=&quot;P1282 &amp;amp; P1131 &amp;amp; P1090 &amp;amp; P1307 &amp;amp; P1095&quot;&gt;&lt;/a&gt;P1282 &amp;amp; P1131 &amp;amp; P1090 &amp;amp; P1307 &amp;amp; P1095&lt;/h2&gt;&lt;h3 id=&quot;P1282&quot;&gt;&lt;a href=&quot;#P1282&quot; class=&quot;headerlink&quot; title=&quot;P1282&quot;&gt;&lt;/a&gt;P1282&lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;*&lt;em&gt;描述: *&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;一共有n个人（以1–n编号）向佳佳要照片，而佳佳只能把照片给其中的k个人。佳佳按照与他们的关系好坏的程度给每个人赋予了一个初始权值W[i]。然后将初始权值从大到小进行排序，每人就有了一个序号D[i]（取值同样是1–n）。按照这个序号对10取模的值将这些人分为10类。也就是说定义每个人的类别序号C[i]的值为(D[i]-1) mod 10 +1，显然类别序号的取值为1–10。第i类的人将会额外得到E[i]的权值。你需要做的就是求出加上额外权值以后，最终的权值最大的k个人，并输出他们的编号。在排序中，如果两人的W[i]相同，编号小的优先。&lt;/p&gt;
 &lt;p&gt;n&amp;lt;=50 000，k&amp;lt;=2000，给出的所有正整数都不超过32767。&lt;/p&gt;
@@ -67,8 +65,6 @@
       <category term="刷OJ" scheme="http://yoursite.com/categories/%E5%88%B7OJ/"/>
     
     
-      <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
       <category term="Vijos" scheme="http://yoursite.com/tags/Vijos/"/>
     
   </entry>
@@ -78,7 +74,7 @@
     <link href="http://yoursite.com/2020/04/14/%E6%AD%A3%E5%88%99%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95/"/>
     <id>http://yoursite.com/2020/04/14/%E6%AD%A3%E5%88%99%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95/</id>
     <published>2020-04-14T14:26:48.000Z</published>
-    <updated>2020-04-15T03:23:58.894Z</updated>
+    <updated>2020-04-26T00:26:43.688Z</updated>
     
     <summary type="html">
     
@@ -90,8 +86,6 @@
       <category term="学习" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
       <category term="编译原理" scheme="http://yoursite.com/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/"/>
     
   </entry>
@@ -101,7 +95,7 @@
     <link href="http://yoursite.com/2020/04/10/%E5%90%84%E7%A7%8D%E5%B7%A5%E5%85%B7%E7%AB%99/"/>
     <id>http://yoursite.com/2020/04/10/%E5%90%84%E7%A7%8D%E5%B7%A5%E5%85%B7%E7%AB%99/</id>
     <published>2020-04-10T09:22:33.000Z</published>
-    <updated>2020-04-12T01:42:04.710Z</updated>
+    <updated>2020-04-26T00:29:02.334Z</updated>
     
     <summary type="html">
     
@@ -121,6 +115,8 @@
     
       <category term="站点" scheme="http://yoursite.com/tags/%E7%AB%99%E7%82%B9/"/>
     
+      <category term="工具" scheme="http://yoursite.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
   </entry>
   
   <entry>
@@ -128,7 +124,7 @@
     <link href="http://yoursite.com/2020/03/31/Hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B-%E4%B8%8B/"/>
     <id>http://yoursite.com/2020/03/31/Hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B-%E4%B8%8B/</id>
     <published>2020-03-31T14:47:12.000Z</published>
-    <updated>2020-03-31T14:57:09.792Z</updated>
+    <updated>2020-04-26T00:32:56.949Z</updated>
     
     <summary type="html">
     
@@ -142,7 +138,7 @@
     
       <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
-      <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
@@ -151,7 +147,7 @@
     <link href="http://yoursite.com/2020/03/26/Markdown%E8%AF%AD%E6%B3%95/"/>
     <id>http://yoursite.com/2020/03/26/Markdown%E8%AF%AD%E6%B3%95/</id>
     <published>2020-03-26T13:07:14.000Z</published>
-    <updated>2020-04-12T02:20:13.152Z</updated>
+    <updated>2020-04-26T00:34:06.318Z</updated>
     
     <summary type="html">
     
@@ -163,14 +159,10 @@
     </summary>
     
     
-      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="学习" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
       <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
-    
-      <category term="技术" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -202,11 +194,11 @@
     <link href="http://yoursite.com/2020/03/26/Hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B-%E4%B8%8A/"/>
     <id>http://yoursite.com/2020/03/26/Hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B-%E4%B8%8A/</id>
     <published>2020-03-26T12:05:10.000Z</published>
-    <updated>2020-03-31T14:48:16.219Z</updated>
+    <updated>2020-04-26T00:33:11.212Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Hexo-博客搭建历程-上&quot;&gt;&lt;a href=&quot;#Hexo-博客搭建历程-上&quot; class=&quot;headerlink&quot; title=&quot;Hexo 博客搭建历程(上)&quot;&gt;&lt;/a&gt;Hexo 博客搭建历程(上)&lt;/h1&gt;&lt;p&gt;Hexo的简洁、神秘让我跃跃欲试，在使用过程中遇到了很多问题，整理此文，一是方便其他技术人搭建自己的博客，二是给自己的学习之旅做个总结。本文&lt;strong&gt;未完结&lt;/strong&gt;，欢迎&lt;code&gt;star&lt;/code&gt;、&lt;code&gt;fork&lt;/code&gt;，如果有错误，请不吝指出。&lt;br&gt;我搭建的博客地址：&lt;a href=&quot;https://mark12a.github.io&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;strong&gt;mark12a.github.io&lt;/strong&gt;&lt;/a&gt;&lt;br&gt;然后鉴于GitHub国内太慢，我又放到了Gitee上面&lt;a href=&quot;https://mazerunner.gitee.io&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;strong&gt;mazerunner.gitee.io&lt;/strong&gt;&lt;/a&gt;&lt;br&gt;二者都可以访问&lt;/p&gt;
+      &lt;p&gt;Hexo的简洁、神秘让我跃跃欲试，在使用过程中遇到了很多问题，整理此文，一是方便其他技术人搭建自己的博客，二是给自己的学习之旅做个总结。本文&lt;strong&gt;未完结&lt;/strong&gt;，欢迎&lt;code&gt;star&lt;/code&gt;、&lt;code&gt;fork&lt;/code&gt;，如果有错误，请不吝指出。&lt;br&gt;我搭建的博客地址：&lt;a href=&quot;https://mark12a.github.io&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;strong&gt;mark12a.github.io&lt;/strong&gt;&lt;/a&gt;&lt;br&gt;然后鉴于GitHub国内太慢，我又放到了Gitee上面&lt;a href=&quot;https://mazerunner.gitee.io&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;strong&gt;mazerunner.gitee.io&lt;/strong&gt;&lt;/a&gt;&lt;br&gt;二者都可以访问&lt;/p&gt;
     
     </summary>
     
@@ -216,7 +208,7 @@
     
       <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
-      <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
@@ -247,7 +239,7 @@
     <link href="http://yoursite.com/2020/03/26/hello-world/"/>
     <id>http://yoursite.com/2020/03/26/hello-world/</id>
     <published>2020-03-26T02:05:10.000Z</published>
-    <updated>2020-03-26T12:12:59.731Z</updated>
+    <updated>2020-04-26T00:32:06.968Z</updated>
     
     <summary type="html">
     
@@ -259,11 +251,7 @@
       <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="技术" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF/"/>
-    
       <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
-    
-      <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -297,7 +285,7 @@
     <link href="http://yoursite.com/2019/12/03/Ayer%E4%B8%AD%E6%96%87%E8%AF%B4%E6%98%8E/"/>
     <id>http://yoursite.com/2019/12/03/Ayer%E4%B8%AD%E6%96%87%E8%AF%B4%E6%98%8E/</id>
     <published>2019-12-03T05:26:02.000Z</published>
-    <updated>2020-03-26T12:09:33.163Z</updated>
+    <updated>2020-04-26T00:32:38.053Z</updated>
     
     <summary type="html">
     
@@ -317,8 +305,6 @@
       <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="技术" scheme="http://yoursite.com/tags/%E6%8A%80%E6%9C%AF/"/>
-    
       <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
     
       <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
@@ -330,12 +316,11 @@
     <link href="http://yoursite.com/2019/07/14/%E7%94%B5%E5%BD%B1%20V%E5%AD%97%E4%BB%87%E6%9D%80%E9%98%9F/"/>
     <id>http://yoursite.com/2019/07/14/%E7%94%B5%E5%BD%B1%20V%E5%AD%97%E4%BB%87%E6%9D%80%E9%98%9F/</id>
     <published>2019-07-14T02:16:19.000Z</published>
-    <updated>2020-03-26T14:33:27.000Z</updated>
+    <updated>2020-04-26T00:25:59.233Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;电影-V字仇杀队&quot;&gt;&lt;a href=&quot;#电影-V字仇杀队&quot; class=&quot;headerlink&quot; title=&quot;电影|V字仇杀队&quot;&gt;&lt;/a&gt;电影|V字仇杀队&lt;/h3&gt;&lt;hr&gt;
-&lt;p&gt;​    鉴于考完期末之后有天晚上着实不想看书，于是打开电脑，数了一下想看的电影，瞥见了V字仇杀队，好，那就你了&lt;/p&gt;
+      &lt;p&gt;​    鉴于考完期末之后有天晚上着实不想看书，于是打开电脑，数了一下想看的电影，瞥见了V字仇杀队，好，那就你了&lt;/p&gt;
 &lt;p&gt;​    本来就已经通过各种途径对这部电影有所耳闻，那个面具的照片更是全网到处可见，本以为这是一部相当平常的带有一点恐怖元素的电影，但是待我看完，发现事情没有那么简单，我有点被震撼到了&lt;/p&gt;
     
     </summary>
@@ -382,12 +367,11 @@
     <link href="http://yoursite.com/2019/04/20/%E8%B4%B5%E5%A6%87%E5%A4%B1%E5%AE%A0/"/>
     <id>http://yoursite.com/2019/04/20/%E8%B4%B5%E5%A6%87%E5%A4%B1%E5%AE%A0/</id>
     <published>2019-04-20T12:16:19.000Z</published>
-    <updated>2020-03-26T14:20:12.046Z</updated>
+    <updated>2020-04-26T00:26:11.914Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;贵妇失宠&quot;&gt;&lt;a href=&quot;#贵妇失宠&quot; class=&quot;headerlink&quot; title=&quot;贵妇失宠&quot;&gt;&lt;/a&gt;贵妇失宠&lt;/h3&gt;&lt;hr&gt;
-&lt;p&gt;​    茨威格的短篇小说总有一种特殊的魔力，尤其是涉及到人物的心理的时候，那种细致的刻画简直让你觉得书中那个人的心被一点一点剥开展示在你面前；当他讲述日常生活的时候，总是能找到这看似平静大海下的波澜涌动，令人感慨万分。&lt;/p&gt;
+      &lt;p&gt;​    茨威格的短篇小说总有一种特殊的魔力，尤其是涉及到人物的心理的时候，那种细致的刻画简直让你觉得书中那个人的心被一点一点剥开展示在你面前；当他讲述日常生活的时候，总是能找到这看似平静大海下的波澜涌动，令人感慨万分。&lt;/p&gt;
     
     </summary>
     
@@ -408,12 +392,11 @@
     <link href="http://yoursite.com/2019/04/20/%E4%BB%8A%E6%97%A5%E8%B0%B7%E9%9B%A8/"/>
     <id>http://yoursite.com/2019/04/20/%E4%BB%8A%E6%97%A5%E8%B0%B7%E9%9B%A8/</id>
     <published>2019-04-20T06:48:55.000Z</published>
-    <updated>2020-03-26T13:56:17.641Z</updated>
+    <updated>2020-04-26T00:26:21.874Z</updated>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;今日谷雨&quot;&gt;&lt;a href=&quot;#今日谷雨&quot; class=&quot;headerlink&quot; title=&quot;今日谷雨&quot;&gt;&lt;/a&gt;今日谷雨&lt;/h3&gt;&lt;hr&gt;
-&lt;p&gt;​    又是一年谷雨，恰逢北京今天下了小雨，使人分外想念南方的那座小城。&lt;/p&gt;
+      &lt;p&gt;​    又是一年谷雨，恰逢北京今天下了小雨，使人分外想念南方的那座小城。&lt;/p&gt;
     
     </summary>
     
@@ -432,7 +415,7 @@
     <link href="http://yoursite.com/2019/03/03/LeetCode%20%E5%88%B7%E9%A2%98-1/"/>
     <id>http://yoursite.com/2019/03/03/LeetCode%20%E5%88%B7%E9%A2%98-1/</id>
     <published>2019-03-03T12:25:55.000Z</published>
-    <updated>2020-03-26T13:24:22.150Z</updated>
+    <updated>2020-04-26T00:26:38.865Z</updated>
     
     <summary type="html">
     
@@ -451,8 +434,6 @@
       <category term="刷OJ" scheme="http://yoursite.com/categories/%E5%88%B7OJ/"/>
     
     
-      <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
       <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
     
   </entry>
@@ -462,7 +443,7 @@
     <link href="http://yoursite.com/2016/09/07/%E6%89%8B%E6%9C%BA%E6%91%84%E5%BD%B1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2016/09/07/%E6%89%8B%E6%9C%BA%E6%91%84%E5%BD%B1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2016-09-07T07:06:00.000Z</published>
-    <updated>2020-03-21T08:14:46.000Z</updated>
+    <updated>2020-04-26T00:30:12.322Z</updated>
     
     <summary type="html">
     
@@ -473,8 +454,6 @@
     
       <category term="学习" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0/"/>
     
-    
-      <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
     
       <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
