@@ -1,16 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Leetcode-P862</title>
+    <url>/2020/04/26/Leetcode-P862/</url>
+    <content><![CDATA[<h2 id="题目简介"><a href="#题目简介" class="headerlink" title="题目简介"></a>题目简介</h2><blockquote>
+<p>*<em>描述: *</em></p>
+<p>返回 <code>A</code> 的最短的非空连续子数组的<strong>长度</strong>，该子数组的和至少为 <code>K</code> 。</p>
+<p>如果没有和至少为 <code>K</code> 的非空子数组，返回 <code>-1</code> 。</p>
+<ul>
+<li>1 &lt;= A.length &lt;= 50000</li>
+<li>-10 ^ 5 &lt;= A[i] &lt;= 10 ^ 5</li>
+<li>1 &lt;= K &lt;= 10 ^ 9</li>
+</ul>
+<a id="more"></a>
+
+<p><strong>实例：</strong></p>
+<blockquote>
+<p>输入：A = [1], K = 1<br>输出：1</p>
+<p>输入：A = [1,2], K = 4<br>输出：-1</p>
+<p>输入：A = [2,-1,2], K = 3</p>
+<p>输出：3</p>
+</blockquote>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><h3 id="思路1"><a href="#思路1" class="headerlink" title="思路1"></a>思路1</h3><p>​    第一种当然就是直接暴力搜索，不过这样的话，复杂度会直接上升到<strong>O(n*n)</strong>，但是可以通过90%的样例</p>
+<p>​    代码就不写了，理解就OK</p>
+<h3 id="思路2"><a href="#思路2" class="headerlink" title="思路2"></a>思路2</h3><h4 id="错误想法"><a href="#错误想法" class="headerlink" title="错误想法"></a>错误想法</h4><p>​    除了暴力搜索的方案之外，我还想到，用两个指针同向而行，这两个指针之间确定了一个子数组，先移动右指针，每当满足条件，我们就试着移动左指针，到条件不满足就停止，就好像一个 <strong>滑动窗口</strong> 一样，但是这个做法其实是错误的！</p>
+<p>​    比如测试样例为 <code>[1,-100,1,2] 3</code>，如果按上述方法来做，会找不到答案。原因在于，你无法确定这两个指针当中，是否存在有符合条件的窗口</p>
+<h4 id="继续思考"><a href="#继续思考" class="headerlink" title="继续思考"></a>继续思考</h4><p>​    我们每遍历到数组当中的一个位置，往回看怎样才能清楚前面哪个区间是符合条件的呢？把前面的位置再重新遍历一遍？那这就又回到了我们前面的暴力方法，肯定不是。</p>
+<p>​    换句话说我们要根据条件考虑前面的位置，这个考虑是在遍历的时候就考虑，而不用我们从头再去重复劳动，一开始我想到了队列，但是这个其实不准确，严格来说是 <strong>单调双端队列</strong>，也就是说这个队列头尾都可以出，而且里面存的元素是单调递增或者递减的，这有个什么好处呢？</p>
+<p>​    想法的核心在于：假如说我们当前考虑位置 i，这时区间 <code>[0, i]</code> 的值比区间 <code>[0, i - 1]</code> 的还要小，那么对于后面的位置，我们其实就不需要考虑了 i - 1 了，因为位置 <code>sum[n] - sum[i] &gt; sum[n] - sum[i - 1]</code>，而且就长度来说的话 <code>[i, n]</code> 比 <code>[i - 1, n]</code> 更短，因此我们可以把 i - 1 这个位置踢出队列。</p>
+<p>​    换句话说，也就是如果数组里面都是正数，那么长度越长，区间和肯定越大，则 sums[i] 一定大于所有双向队列中的区间和，但由于可能存在负数，从而使得长度变长，区间总和反而减少了，所以如果出现上面这种情况直接将 <code>i - 1</code> 这个位置踢出队列即可。</p>
+<p>​    我们从队列中最小的位置开始计算，如果符合条件，我们就记录答案，并将这个位置踢出队列，道理很简单，再往后遍历不可能会有比这个还要小的符合条件的长度。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><h4 id="代码1"><a href="#代码1" class="headerlink" title="代码1"></a>代码1</h4><p>这是我自己写的代码，调了我一整个上午，用数组来进行实现，最终通过。</p>
+<p>但是还是麻烦了一点，尽管内存消耗少于<strong>100%</strong>的代码【骄傲.jpg</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">shortestSubarray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A, <span class="keyword">int</span> K)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; add;</span><br><span class="line">        <span class="keyword">int</span> a[<span class="number">50005</span>];</span><br><span class="line">        <span class="keyword">int</span> head, tail;</span><br><span class="line">        <span class="keyword">int</span> <span class="built_in">min</span>=<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> temp_min=<span class="number">-1</span>;</span><br><span class="line">        head = tail = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">memset</span>(a, <span class="number">0</span>, <span class="keyword">sizeof</span>(a));</span><br><span class="line">        <span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (sum &lt; K &amp;&amp; cnt&lt;A.<span class="built_in">size</span>())</span><br><span class="line">            sum += A[cnt++];</span><br><span class="line">        <span class="keyword">if</span> (sum &gt;= K)</span><br><span class="line">            temp_min = cnt;</span><br><span class="line">        add.push_back(A[<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;A.<span class="built_in">size</span>(); i++)</span><br><span class="line">            add.push_back(A[i]+add[i<span class="number">-1</span>]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;add.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">while</span> (head&lt;=tail &amp;&amp; add[a[tail]]&gt;=add[i] &amp;&amp; a[tail]&lt;=i)</span><br><span class="line">                tail--;</span><br><span class="line">            a[++tail] = i;</span><br><span class="line">            <span class="keyword">while</span> (add[a[head]]&gt;=add[a[head+<span class="number">1</span>]] &amp;&amp; a[head]&lt;a[head+<span class="number">1</span>] &amp;&amp; head&lt;tail)</span><br><span class="line">                head++;</span><br><span class="line">            <span class="keyword">while</span> (add[a[tail]] - add[a[head]] &gt;= K &amp;&amp; head&lt;tail &amp;&amp; add[a[tail]] - add[a[head+<span class="number">1</span>]] &gt;= K)</span><br><span class="line">                head++;</span><br><span class="line">            <span class="keyword">if</span> (add[a[tail]] - add[a[head]] &gt;= K)&#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">min</span> &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                    <span class="keyword">if</span> (a[tail]-a[head] &lt; <span class="built_in">min</span>)</span><br><span class="line">                        <span class="built_in">min</span> = a[tail] - a[head];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    <span class="built_in">min</span> = a[tail] - a[head];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">min</span>==<span class="number">-1</span> &amp;&amp; temp_min!=<span class="number">-1</span>)</span><br><span class="line">            <span class="keyword">return</span> temp_min;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">min</span>!=<span class="number">-1</span> &amp;&amp; temp_min!=<span class="number">-1</span> &amp;&amp; temp_min&lt;<span class="built_in">min</span>)</span><br><span class="line">            <span class="keyword">return</span> temp_min;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">min</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="代码2"><a href="#代码2" class="headerlink" title="代码2:"></a>代码2:</h4><p>嗯，我找了一下，这份代码比我的就简单很多了，赶紧学习一个！</p>
+<p>没想到能直接用deque（我都不知道这东西【太菜了.jpg</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">shortestSubarray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A, <span class="keyword">int</span> K)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum[<span class="number">50005</span>];</span><br><span class="line">        <span class="keyword">int</span> ret = <span class="number">2e9</span>;</span><br><span class="line">        <span class="keyword">int</span> n = A.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            sum[i+<span class="number">1</span>] = sum[i] + A[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">deque</span>&lt;<span class="keyword">int</span>&gt;que;</span><br><span class="line">        que.push_back(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">while</span>(que.<span class="built_in">size</span>() <span class="keyword">and</span> sum[i] &lt;= sum[que.back()])</span><br><span class="line">                que.pop_back();</span><br><span class="line">            <span class="keyword">while</span>(que.<span class="built_in">size</span>() <span class="keyword">and</span> sum[i] - sum[que.front()] &gt;= K) &#123;</span><br><span class="line">                ret = <span class="built_in">min</span>(ret, i - que.front());</span><br><span class="line">                que.pop_front();</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            que.push_back(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(ret == <span class="number">2e9</span>) ret = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="代码3"><a href="#代码3" class="headerlink" title="代码3"></a>代码3</h4><p>这个就更厉害了，赶紧膜一下！</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">auto</span> __ = []()&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">shortestSubarray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A, <span class="keyword">int</span> K)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = A.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>, <span class="built_in">begin</span> = <span class="number">0</span>, res = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (A[i] &gt;= K) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">            sum += A[i];</span><br><span class="line">            <span class="keyword">if</span> (sum &lt; <span class="number">1</span>) &#123;</span><br><span class="line">                sum = <span class="number">0</span>;</span><br><span class="line">                <span class="built_in">begin</span> = i + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i - <span class="number">1</span>; A[j + <span class="number">1</span>] &lt; <span class="number">0</span>; j--) &#123;</span><br><span class="line">                A[j] = A[j + <span class="number">1</span>] + A[j];</span><br><span class="line">                A[j + <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (sum &gt;= K) &#123;</span><br><span class="line">                <span class="keyword">while</span> (sum - A[<span class="built_in">begin</span>] &gt;= K || A[<span class="built_in">begin</span>] &lt;= <span class="number">0</span>)</span><br><span class="line">                    sum -= A[<span class="built_in">begin</span>++];</span><br><span class="line">                <span class="keyword">int</span> length = i - <span class="built_in">begin</span> + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span> (res &lt; <span class="number">0</span> || res &gt; length)</span><br><span class="line">                    res = length;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>刷OJ</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Leetcode-P239</title>
-    <url>/2020/04/25/Leetcode-P239/</url>
+    <url>/2020/04/25/LeetCode-P239/</url>
     <content><![CDATA[<h2 id="题目简介"><a href="#题目简介" class="headerlink" title="题目简介"></a>题目简介</h2><blockquote>
 <p>*<em>描述: *</em></p>
 <p>给定一个数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。</p>
 <p>返回滑动窗口中的最大值。</p>
 <ul>
-<li><code>1 &lt;= nums.length &lt;= 10^5</code></li>
-<li><code>-10^4 &lt;= nums[i] &lt;= 10^4</code></li>
-<li><code>1 &lt;= k &lt;= nums.length</code></li>
+<li>1 &lt;= nums.length &lt;= 10^5</li>
+<li>-10^4 &lt;= nums[i] &lt;= 10^4</li>
+<li>1 &lt;= k &lt;= nums.lengt`</li>
 </ul>
 <a id="more"></a>
 
@@ -950,7 +1004,6 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
-        <tag>学习</tag>
       </tags>
   </entry>
   <entry>
