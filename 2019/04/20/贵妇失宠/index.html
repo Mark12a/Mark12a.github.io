@@ -1,28 +1,122 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>贵妇失宠 | Maze Runner</title><meta name="description" content="​    茨威格的短篇小说总有一种特殊的魔力，尤其是涉及到人物的心理的时候，那种细致的刻画简直让你觉得书中那个人的心被一点一点剥开展示在你面前；当他讲述日常生活的时候，总是能找到这看似平静大海下的波澜涌动，令人感慨万分。   ​    最近有看到他一篇小说，很有感触，小说名为——《贵妇失宠》  故事的主人公德.普里夫人在她的情人波旁公爵被剥夺执掌国政权柄之后，也收到了国王给她的离开宫廷的命令，她以"><meta name="keywords" content="随笔,瞎想,阅读"><meta name="author" content="Mark,niwei0203@icloud.com"><meta name="copyright" content="Mark"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="http://yoursite.com/2019/04/20/%E8%B4%B5%E5%A6%87%E5%A4%B1%E5%AE%A0/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="贵妇失宠"><meta property="og:url" content="http://yoursite.com/2019/04/20/%E8%B4%B5%E5%A6%87%E5%A4%B1%E5%AE%A0/"><meta property="og:site_name" content="Maze Runner"><meta property="og:description" content="​    茨威格的短篇小说总有一种特殊的魔力，尤其是涉及到人物的心理的时候，那种细致的刻画简直让你觉得书中那个人的心被一点一点剥开展示在你面前；当他讲述日常生活的时候，总是能找到这看似平静大海下的波澜涌动，令人感慨万分。   ​    最近有看到他一篇小说，很有感触，小说名为——《贵妇失宠》  故事的主人公德.普里夫人在她的情人波旁公爵被剥夺执掌国政权柄之后，也收到了国王给她的离开宫廷的命令，她以"><meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe167b3obj30u011ix6p.jpg"><meta property="article:published_time" content="2019-04-20T12:16:19.000Z"><meta property="article:modified_time" content="2020-08-03T15:24:12.810Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
 
-block content
-  article#post(class="")
-    #article-container.post-content!=page.content
-    include includes/post/post-copyright.pug
-    .tag_share
-      if (theme.post_meta.post.tags)
-        .post-meta__tag-list
-          each item, index in page.tags.data
-            a(href=url_for(item.path)).post-meta__tags #[=item.name]
-      include includes/third-party/share/index.pug
-        
-    if theme.reward.enable
-      !=partial('includes/post/reward', {}, {cache:theme.fragment_cache})
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
 
-    //- ad
-    if theme.ad && theme.ad.post
-      .post-ad!=theme.ad.post
+var autoChangeMode = '2'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
 
-    include includes/pagination.pug
-    if theme.related_post && theme.related_post.enable
-      != related_posts(page,site.posts)
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days',
+  runtime: true,
+  copyright: {"limitCount":50,"languages":{"author":"Author: Mark","link":"Link: ","source":"Source: Maze Runner","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  ClickShowText: {"text":"I,LOVE,YOU","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"Press","message_next":"to bookmark this page"},"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: false,
+  postUpdate: '2020-08-03 23:24:12'
+}</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Maze Runner" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">20</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">13</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">Categories</div><div class="length_num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="color"></div><header class="post-bg" id="page-header" style="background-image: url(https://tva1.sinaimg.cn/large/007S8ZIlly1ghe167b3obj30u011ix6p.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Maze Runner</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">贵妇失宠</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2019-04-20T12:16:19.000Z" title="Created 2019-04-20 20:16:19">2019-04-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2020-08-03T15:24:12.810Z" title="Updated 2020-08-03 23:24:12">2020-08-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">2.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>6min</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><p>​    茨威格的短篇小说总有一种特殊的魔力，尤其是涉及到人物的心理的时候，那种细致的刻画简直让你觉得书中那个人的心被一点一点剥开展示在你面前；当他讲述日常生活的时候，总是能找到这看似平静大海下的波澜涌动，令人感慨万分。</p>
+<a id="more"></a>
 
-    if page.comments !== false && theme.comments && theme.comments.use
-      - var commentsJsLoad = true
-      !=partial('includes/third-party/comments/index', {}, {cache:theme.fragment_cache})
-      
+<p>​    最近有看到他一篇小说，很有感触，小说名为——<a href="https://www.douban.com/group/topic/49672102/" target="_blank" rel="noopener">《贵妇失宠》</a></p>
+<blockquote>
+<p>故事的主人公德.普里夫人在她的情人波旁公爵被剥夺执掌国政权柄之后，也收到了国王给她的离开宫廷的命令，她以法国上流社会的心机认为这是短暂的离开，甚至是带着她特有的骄傲从巴黎去到古尔贝宾。在到达古尔贝宾的第一天，她很快从被驱逐的心境中恢复过来，忘情地欣赏乡间的一切，与女工们和小伙子们坦诚相见，感到幸福和充溢。但是对于已经习惯了巴黎繁华喧嚣的德.普里夫人来说，乡间的无聊和安静已没有了吸引力，再加_上她迫切希望从她的旧情人阿兰古尔亲王那里听到她胜利的消息，因此她感到百无聊赖。这个在巴黎备受奉承的贵妇怎能忍受夜晚的孤独和寂寞，她认识了当地神父的侄子，并轻松地勾引了这个年轻人，使他成为自己的情人。就在德.普里夫人急切盼望胜利消息的时候，她开始认识到这个年轻人让她厌烦，并且他现在得到的一切是建立在自己的不幸上的。在一次二人的争执中，德·普里夫人“被她最后的玩具砸的稀烂”。就在此时，她收到了来自巴黎的消息，她还要在古尔贝宾待上两年，这对她来说，无疑是宣判了死刑，“没有幸福，没有财富，没有权力，没有青春，没有爱情，她无法呼吸”。于是她决定自我了断，并且要制造- -种神秘的，诡异的氛围。她邀请巴黎和各省的名流来她的住所娱乐狂欢，并预言十月七日她将死去，计划很顺利，一切照她所预想的进行，她在十月七日喝下了来自中国的毒药，结束了自己的一生，她希望用自己的死使国王，巴黎名流圈泛起哪怕一层涟漪，用死来让他们铭记还有德·普里夫人这样一个女人，但不幸的是，她死的消息在意大利魔术师令人惊讶的绝技中被众人抛之脑后。</p>
+</blockquote>
+<p>​    值得注意的是最后茨威格对于普里夫人的描写，极为传神，惊为神笔：</p>
+<p>​    “她一动不动地躺在地上，活像一只被人驱赶而死的野兽。<strong>‘夜色已渐渐涌入房内，可她没有感到，因为夜晚悄悄来临，它不像正午，放肆地透过窗户往里瞧。它像昏黑的涓涓细流从四壁涌出，把天花板举向虚无之中，把所有的东西都不声不响地冲到它那悄无声息的洪流之中。等她抬眼张望，黑暗已围在她的四周，一片沉寂。只有在什么地方有只小钟滴滴答答作响，无休无止。窗帘叠在一起，是那样阴暗黝黑，仿佛有个可怕的精灵躲在后面，房门不知怎地消失在墙上，整个房间团团封闭在黑暗之中，犹如一口钉死了的棺材。任何地方都找不到进口和出口，到处都没有界线，可又到处都已封死，一切似乎都向人逼了过来，空气的压力越来越大，结果只能喘气，不能呼吸。’</strong></p>
+<hr>
+<p>​    整篇小说的中心在我看来只有一个——欺骗，普里夫人始终都沉浸在自己的世界之中，总是以为自己掌控着一切。故事的开头，普里夫人本已冥冥之中知晓自己的命运，但仍然装作自己依旧掌控着一切，面对信使波澜不惊，关上门后几乎气疯；面对政敌，依然装作平静；甚至在离开巴黎之时还装作毫不在乎，以为整个巴黎将会为她的离开而震惊。（戏真多）</p>
+<p>​    这样的情况下，在回到庄园之后，为了满足自己原有的那种被仰视和奉承的感觉，开始玩弄一位乡村年轻人的感情，看到年轻人为这份感情抓狂的表现符合自己的预期，她的心中似乎就有了一种快感，似乎自己依旧掌控一切。而当最后她被忘却已成定局，普里夫人为了让自己不被忘记，策划了一场闹剧，利用在摄政时期榨取来的千百万金钱，大把大把的恣意挥霍，不断举办着奢靡的盛会，引起周围人的注意，企图使自己再次成为中心。无所伯爵贵族来到她的府邸之时，她就又开始觉得自己自己依然还有着曾经的影响力，还能够影响到巴黎的一举一动，从未意识到所有人的前来不过只是为了宴会，而非她自己。</p>
+<p>​    <strong>“她又有了一个目的，她不愿在这里悄然死去，活像一只野兽，待在一个角落气绝身亡。她要死的富有英雄气概，具有传奇色彩，犹如古代的那些女王。她的一生曾经灿烂辉煌；所以她的辞世也应该如此。应该再一次激起成千上万浑浑噩噩的人的赞叹。在巴黎不得有任何人预感到，她在这里痛苦万状地沉沦，为孤独和失宠所刺死，为未能实现的权利欲所焚毁。她要用一出死亡的喜剧来欺骗众人。”</strong></p>
+<p>​    甚至在预计死亡的最后，依然欺骗了最后一个人，也就是之前被玩弄的年轻人。同时她做好了一切死亡的准备，把自己盛装打扮。之后，她想象着当她离开人世以后，使者快步如飞，国王大吃一惊，整个法兰西惊愕不已…一想到她在死之前还能再欺骗他们，她就觉得死很轻松。她还要带着微笑死去，喝下毒药之后，她等待着死神来临，微笑着，微笑着，微笑着…让别人感慨于她的淡定和体面</p>
+<p>​    但是死神终究不容欺骗，当人们找到德·普里夫人时，她的脸扭成一幅狰狞的怪相。而且，可笑的是，这场表面看来欢快无比的壮丽戏剧，对她辞世之日的神秘预告也是徒劳。关于她自杀的消息传到巴黎时，正好大家正好在看意大利魔法师的表演。她曾预想的轰动整个法兰西的结局，现实中只不过是大家稍稍有些激动、惊讶，而几分钟之后又被遗忘。在法兰西，她竭尽全力表演的一台令人难忘的戏终归不过白费力气。</p>
+<p>​    听起来好笑的故事，描述的东西其实也真真切切的发生在我们的身上，至少曾经发生在我的身上。我们往往总是以为自己是个挺重要的人物，不停的装点着自己，作着各种各样的花样死，以为自己是个人物，然而如果我们抬头望向天空，就会发现自己的渺小，在这宇宙和时间的长河之中，我们如同一粒尘埃，最终啥也不是，甚至最后我们的存在也会被时间抹的干干净净，不留痕迹。</p>
+<p>​    所以啊，其实重要的事情还是真实的面对自己，了解自己，知道想要什么，不想要什么，足矣。又想起前阵子看的《欢乐颂》，就像樊胜美一样，装出来的东西，迟早有一天会被戳破，到最后啥也不是。</p>
+<blockquote>
+<p>她那时候还太年轻，不知道所有<em>命运</em>馈赠的礼物，早已在暗中标好了价格。</p>
+</blockquote>
+<p>​    就像作者在小说最后说道，<strong>“因为世界史容不得擅自闯入的来客，它亲自遴选自己的主人公，把那些不召自来的人们无情的斥退。谁若从滚滚向前的命运之车上掉下来，谁就再也赶不上它。”</strong></p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:niwei0203@icloud.com">Mark</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://yoursite.com/2019/04/20/%E8%B4%B5%E5%A6%87%E5%A4%B1%E5%AE%A0/">http://yoursite.com/2019/04/20/%E8%B4%B5%E5%A6%87%E5%A4%B1%E5%AE%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a><a class="post-meta__tags" href="/tags/%E7%9E%8E%E6%83%B3/">瞎想</a><a class="post-meta__tags" href="/tags/%E9%98%85%E8%AF%BB/">阅读</a></div><div class="post_share"><div class="social-share" data-image="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe167b3obj30u011ix6p.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2019/06/23/%E5%85%B3%E4%BA%8E%E7%94%9F%E6%B4%BB%EF%BC%8C%E5%85%B3%E4%BA%8E%E8%BF%87%E5%8E%BB/"><img class="prev-cover" data-lazy-src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe157c2wvj319f0u0u0z.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">关于生活,关于过去</div></div></a></div><div class="next-post pull-right"><a href="/2019/04/20/%E4%BB%8A%E6%97%A5%E8%B0%B7%E9%9B%A8/"><img class="next-cover" data-lazy-src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe171or1qj30u016uqv6.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">今日谷雨</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> Related Articles</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2020/03/26/Hello-World！/" title="Hello, World！"><img class="relatedPosts_cover" data-lazy-src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe1mkgu8qj31900u0npf.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-03-26</div><div class="relatedPosts_title">Hello, World！</div></div></a></div><div class="relatedPosts_item"><a href="/2019/07/14/电影 V字仇杀队/" title="电影|V字仇杀队"><img class="relatedPosts_cover" data-lazy-src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe12xy3ppj318a0u0npd.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2019-07-14</div><div class="relatedPosts_title">电影|V字仇杀队</div></div></a></div><div class="relatedPosts_item"><a href="/2019/06/23/关于生活，关于过去/" title="关于生活,关于过去"><img class="relatedPosts_cover" data-lazy-src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe157c2wvj319f0u0u0z.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2019-06-23</div><div class="relatedPosts_title">关于生活,关于过去</div></div></a></div><div class="relatedPosts_item"><a href="/2019/04/20/今日谷雨/" title="今日谷雨"><img class="relatedPosts_cover" data-lazy-src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe171or1qj30u016uqv6.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2019-04-20</div><div class="relatedPosts_title">今日谷雨</div></div></a></div><div class="relatedPosts_item"><a href="/2020/03/26/about/" title="About Me"><img class="relatedPosts_cover" data-lazy-src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe199st9yj30u01357wj.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-03-26</div><div class="relatedPosts_title">About Me</div></div></a></div><div class="relatedPosts_item"><a href="/2016/09/07/手机摄影学习笔记/" title="手机摄影学习笔记"><img class="relatedPosts_cover" data-lazy-src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe17mc1arj318e0u0hdu.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2016-09-07</div><div class="relatedPosts_title">手机摄影学习笔记</div></div></a></div></div></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By Mark</div><div class="framework-info"><span>Framework </span><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="font_plus" type="button" title="Increase Font Size"><i class="fas fa-plus"></i></button><button id="font_minus" type="button" title="Decrease Font Size"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/js/third-party/ClickShowText.js" async="async"></script></div></body></html>

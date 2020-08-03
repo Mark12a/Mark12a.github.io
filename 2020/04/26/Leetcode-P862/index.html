@@ -1,28 +1,144 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Leetcode-P862 | Maze Runner</title><meta name="description" content="题目简介 *描述: * 返回 A 的最短的非空连续子数组的长度，该子数组的和至少为 K 。 如果没有和至少为 K 的非空子数组，返回 -1 。  1 &lt;&#x3D; A.length &lt;&#x3D; 50000 -10 ^ 5 &lt;&#x3D; A[i] &lt;&#x3D; 10 ^ 5 1 &lt;&#x3D; K &lt;&#x3D; 10 ^ 9    实例：  输入：A &#x3D; [1], K &#x3D; 1输出：1 输入：A &#x3D; [1,2],"><meta name="keywords" content="LeetCode"><meta name="author" content="Mark,niwei0203@icloud.com"><meta name="copyright" content="Mark"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="http://yoursite.com/2020/04/26/Leetcode-P862/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="Leetcode-P862"><meta property="og:url" content="http://yoursite.com/2020/04/26/Leetcode-P862/"><meta property="og:site_name" content="Maze Runner"><meta property="og:description" content="题目简介 *描述: * 返回 A 的最短的非空连续子数组的长度，该子数组的和至少为 K 。 如果没有和至少为 K 的非空子数组，返回 -1 。  1 &lt;&#x3D; A.length &lt;&#x3D; 50000 -10 ^ 5 &lt;&#x3D; A[i] &lt;&#x3D; 10 ^ 5 1 &lt;&#x3D; K &lt;&#x3D; 10 ^ 9    实例：  输入：A &#x3D; [1], K &#x3D; 1输出：1 输入：A &#x3D; [1,2],"><meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe1grpfvvj31900u0kjm.jpg"><meta property="article:published_time" content="2020-04-26T08:41:48.000Z"><meta property="article:modified_time" content="2020-08-03T15:27:08.621Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
 
-block content
-  article#post(class="")
-    #article-container.post-content!=page.content
-    include includes/post/post-copyright.pug
-    .tag_share
-      if (theme.post_meta.post.tags)
-        .post-meta__tag-list
-          each item, index in page.tags.data
-            a(href=url_for(item.path)).post-meta__tags #[=item.name]
-      include includes/third-party/share/index.pug
-        
-    if theme.reward.enable
-      !=partial('includes/post/reward', {}, {cache:theme.fragment_cache})
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
 
-    //- ad
-    if theme.ad && theme.ad.post
-      .post-ad!=theme.ad.post
+var autoChangeMode = '2'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
 
-    include includes/pagination.pug
-    if theme.related_post && theme.related_post.enable
-      != related_posts(page,site.posts)
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days',
+  runtime: true,
+  copyright: {"limitCount":50,"languages":{"author":"Author: Mark","link":"Link: ","source":"Source: Maze Runner","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  ClickShowText: {"text":"I,LOVE,YOU","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"Press","message_next":"to bookmark this page"},"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2020-08-03 23:27:08'
+}</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Maze Runner" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">20</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">13</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">Categories</div><div class="length_num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="color"></div><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目简介"><span class="toc-number">1.</span> <span class="toc-text">题目简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路1"><span class="toc-number">2.1.</span> <span class="toc-text">思路1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路2"><span class="toc-number">2.2.</span> <span class="toc-text">思路2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#错误想法"><span class="toc-number">2.2.1.</span> <span class="toc-text">错误想法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#继续思考"><span class="toc-number">2.2.2.</span> <span class="toc-text">继续思考</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#代码1"><span class="toc-number">3.1.</span> <span class="toc-text">代码1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码2"><span class="toc-number">3.2.</span> <span class="toc-text">代码2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码3"><span class="toc-number">3.3.</span> <span class="toc-text">代码3</span></a></li></ol></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://tva1.sinaimg.cn/large/007S8ZIlly1ghe1grpfvvj31900u0kjm.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Maze Runner</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">Leetcode-P862</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-04-26T08:41:48.000Z" title="Created 2020-04-26 16:41:48">2020-04-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2020-08-03T15:27:08.621Z" title="Updated 2020-08-03 23:27:08">2020-08-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%88%B7OJ/">刷OJ</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">1.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>5min</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="题目简介"><a href="#题目简介" class="headerlink" title="题目简介"></a>题目简介</h2><blockquote>
+<p>*<em>描述: *</em></p>
+<p>返回 <code>A</code> 的最短的非空连续子数组的<strong>长度</strong>，该子数组的和至少为 <code>K</code> 。</p>
+<p>如果没有和至少为 <code>K</code> 的非空子数组，返回 <code>-1</code> 。</p>
+<ul>
+<li>1 &lt;= A.length &lt;= 50000</li>
+<li>-10 ^ 5 &lt;= A[i] &lt;= 10 ^ 5</li>
+<li>1 &lt;= K &lt;= 10 ^ 9</li>
+</ul>
+<a id="more"></a>
 
-    if page.comments !== false && theme.comments && theme.comments.use
-      - var commentsJsLoad = true
-      !=partial('includes/third-party/comments/index', {}, {cache:theme.fragment_cache})
-      
+<p><strong>实例：</strong></p>
+<blockquote>
+<p>输入：A = [1], K = 1<br>输出：1</p>
+<p>输入：A = [1,2], K = 4<br>输出：-1</p>
+<p>输入：A = [2,-1,2], K = 3</p>
+<p>输出：3</p>
+</blockquote>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><h3 id="思路1"><a href="#思路1" class="headerlink" title="思路1"></a>思路1</h3><p>​    第一种当然就是直接暴力搜索，不过这样的话，复杂度会直接上升到<strong>O(n*n)</strong>，但是可以通过90%的样例</p>
+<p>​    代码就不写了，理解就OK</p>
+<h3 id="思路2"><a href="#思路2" class="headerlink" title="思路2"></a>思路2</h3><h4 id="错误想法"><a href="#错误想法" class="headerlink" title="错误想法"></a>错误想法</h4><p>​    除了暴力搜索的方案之外，我还想到，用两个指针同向而行，这两个指针之间确定了一个子数组，先移动右指针，每当满足条件，我们就试着移动左指针，到条件不满足就停止，就好像一个 <strong>滑动窗口</strong> 一样，但是这个做法其实是错误的！</p>
+<p>​    比如测试样例为 <code>[1,-100,1,2] 3</code>，如果按上述方法来做，会找不到答案。原因在于，你无法确定这两个指针当中，是否存在有符合条件的窗口</p>
+<h4 id="继续思考"><a href="#继续思考" class="headerlink" title="继续思考"></a>继续思考</h4><p>​    我们每遍历到数组当中的一个位置，往回看怎样才能清楚前面哪个区间是符合条件的呢？把前面的位置再重新遍历一遍？那这就又回到了我们前面的暴力方法，肯定不是。</p>
+<p>​    换句话说我们要根据条件考虑前面的位置，这个考虑是在遍历的时候就考虑，而不用我们从头再去重复劳动，一开始我想到了队列，但是这个其实不准确，严格来说是 <strong>单调双端队列</strong>，也就是说这个队列头尾都可以出，而且里面存的元素是单调递增或者递减的，这有个什么好处呢？</p>
+<p>​    想法的核心在于：假如说我们当前考虑位置 i，这时区间 <code>[0, i]</code> 的值比区间 <code>[0, i - 1]</code> 的还要小，那么对于后面的位置，我们其实就不需要考虑了 i - 1 了，因为位置 <code>sum[n] - sum[i] &gt; sum[n] - sum[i - 1]</code>，而且就长度来说的话 <code>[i, n]</code> 比 <code>[i - 1, n]</code> 更短，因此我们可以把 i - 1 这个位置踢出队列。</p>
+<p>​    换句话说，也就是如果数组里面都是正数，那么长度越长，区间和肯定越大，则 sums[i] 一定大于所有双向队列中的区间和，但由于可能存在负数，从而使得长度变长，区间总和反而减少了，所以如果出现上面这种情况直接将 <code>i - 1</code> 这个位置踢出队列即可。</p>
+<p>​    我们从队列中最小的位置开始计算，如果符合条件，我们就记录答案，并将这个位置踢出队列，道理很简单，再往后遍历不可能会有比这个还要小的符合条件的长度。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="代码1"><a href="#代码1" class="headerlink" title="代码1"></a>代码1</h3><p>这是我自己写的代码，调了我一整个上午，用数组来进行实现，最终通过。</p>
+<p>但是还是麻烦了一点，尽管内存消耗少于<strong>100%</strong>的代码【骄傲.jpg</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">shortestSubarray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A, <span class="keyword">int</span> K)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; add;</span><br><span class="line">        <span class="keyword">int</span> a[<span class="number">50005</span>];</span><br><span class="line">        <span class="keyword">int</span> head, tail;</span><br><span class="line">        <span class="keyword">int</span> <span class="built_in">min</span>=<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">int</span> temp_min=<span class="number">-1</span>;</span><br><span class="line">        head = tail = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">memset</span>(a, <span class="number">0</span>, <span class="keyword">sizeof</span>(a));</span><br><span class="line">        <span class="keyword">int</span> cnt=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (sum &lt; K &amp;&amp; cnt&lt;A.<span class="built_in">size</span>())</span><br><span class="line">            sum += A[cnt++];</span><br><span class="line">        <span class="keyword">if</span> (sum &gt;= K)</span><br><span class="line">            temp_min = cnt;</span><br><span class="line">        add.push_back(A[<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;A.<span class="built_in">size</span>(); i++)</span><br><span class="line">            add.push_back(A[i]+add[i<span class="number">-1</span>]);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;add.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">            <span class="keyword">while</span> (head&lt;=tail &amp;&amp; add[a[tail]]&gt;=add[i] &amp;&amp; a[tail]&lt;=i)</span><br><span class="line">                tail--;</span><br><span class="line">            a[++tail] = i;</span><br><span class="line">            <span class="keyword">while</span> (add[a[head]]&gt;=add[a[head+<span class="number">1</span>]] &amp;&amp; a[head]&lt;a[head+<span class="number">1</span>] &amp;&amp; head&lt;tail)</span><br><span class="line">                head++;</span><br><span class="line">            <span class="keyword">while</span> (add[a[tail]] - add[a[head]] &gt;= K &amp;&amp; head&lt;tail &amp;&amp; add[a[tail]] - add[a[head+<span class="number">1</span>]] &gt;= K)</span><br><span class="line">                head++;</span><br><span class="line">            <span class="keyword">if</span> (add[a[tail]] - add[a[head]] &gt;= K)&#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">min</span> &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                    <span class="keyword">if</span> (a[tail]-a[head] &lt; <span class="built_in">min</span>)</span><br><span class="line">                        <span class="built_in">min</span> = a[tail] - a[head];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    <span class="built_in">min</span> = a[tail] - a[head];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">min</span>==<span class="number">-1</span> &amp;&amp; temp_min!=<span class="number">-1</span>)</span><br><span class="line">            <span class="keyword">return</span> temp_min;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">min</span>!=<span class="number">-1</span> &amp;&amp; temp_min!=<span class="number">-1</span> &amp;&amp; temp_min&lt;<span class="built_in">min</span>)</span><br><span class="line">            <span class="keyword">return</span> temp_min;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">min</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="代码2"><a href="#代码2" class="headerlink" title="代码2"></a>代码2</h3><p>嗯，我找了一下，这份代码比我的就简单很多了，赶紧学习一个！</p>
+<p>没想到能直接用deque（我都不知道这东西【太菜了.jpg</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">shortestSubarray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A, <span class="keyword">int</span> K)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum[<span class="number">50005</span>];</span><br><span class="line">        <span class="keyword">int</span> ret = <span class="number">2e9</span>;</span><br><span class="line">        <span class="keyword">int</span> n = A.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            sum[i+<span class="number">1</span>] = sum[i] + A[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">deque</span>&lt;<span class="keyword">int</span>&gt;que;</span><br><span class="line">        que.push_back(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">while</span>(que.<span class="built_in">size</span>() <span class="keyword">and</span> sum[i] &lt;= sum[que.back()])</span><br><span class="line">                que.pop_back();</span><br><span class="line">            <span class="keyword">while</span>(que.<span class="built_in">size</span>() <span class="keyword">and</span> sum[i] - sum[que.front()] &gt;= K) &#123;</span><br><span class="line">                ret = <span class="built_in">min</span>(ret, i - que.front());</span><br><span class="line">                que.pop_front();</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            que.push_back(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(ret == <span class="number">2e9</span>) ret = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="代码3"><a href="#代码3" class="headerlink" title="代码3"></a>代码3</h3><p>这个就更厉害了，赶紧膜一下！</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">auto</span> __ = []()&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;();</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">shortestSubarray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A, <span class="keyword">int</span> K)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = A.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>, <span class="built_in">begin</span> = <span class="number">0</span>, res = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (A[i] &gt;= K) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">            sum += A[i];</span><br><span class="line">            <span class="keyword">if</span> (sum &lt; <span class="number">1</span>) &#123;</span><br><span class="line">                sum = <span class="number">0</span>;</span><br><span class="line">                <span class="built_in">begin</span> = i + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i - <span class="number">1</span>; A[j + <span class="number">1</span>] &lt; <span class="number">0</span>; j--) &#123;</span><br><span class="line">                A[j] = A[j + <span class="number">1</span>] + A[j];</span><br><span class="line">                A[j + <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (sum &gt;= K) &#123;</span><br><span class="line">                <span class="keyword">while</span> (sum - A[<span class="built_in">begin</span>] &gt;= K || A[<span class="built_in">begin</span>] &lt;= <span class="number">0</span>)</span><br><span class="line">                    sum -= A[<span class="built_in">begin</span>++];</span><br><span class="line">                <span class="keyword">int</span> length = i - <span class="built_in">begin</span> + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span> (res &lt; <span class="number">0</span> || res &gt; length)</span><br><span class="line">                    res = length;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:niwei0203@icloud.com">Mark</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://yoursite.com/2020/04/26/Leetcode-P862/">http://yoursite.com/2020/04/26/Leetcode-P862/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/LeetCode/">LeetCode</a></div><div class="post_share"><div class="social-share" data-image="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe1grpfvvj31900u0kjm.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/06/04/%E8%BF%91%E6%97%A5%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"><img class="prev-cover" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">近日胡思乱想</div></div></a></div><div class="next-post pull-right"><a href="/2020/04/25/LeetCode-P239/"><img class="next-cover" data-lazy-src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe1h9mnjnj31900u04qv.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">Leetcode-P239</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> Related Articles</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2020/04/25/LeetCode-P239/" title="Leetcode-P239"><img class="relatedPosts_cover" data-lazy-src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe1h9mnjnj31900u04qv.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-04-25</div><div class="relatedPosts_title">Leetcode-P239</div></div></a></div><div class="relatedPosts_item"><a href="/2019/03/03/LeetCode 刷题-1/" title="LeedCode刷题-1"><img class="relatedPosts_cover" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2019-03-03</div><div class="relatedPosts_title">LeedCode刷题-1</div></div></a></div></div></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By Mark</div><div class="framework-info"><span>Framework </span><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="font_plus" type="button" title="Increase Font Size"><i class="fas fa-plus"></i></button><button id="font_minus" type="button" title="Decrease Font Size"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/js/third-party/ClickShowText.js" async="async"></script></div></body></html>

@@ -1,7 +1,319 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Maze Runner - I am Runner in the Life Maze</title><meta name="description" content="Runner_maze"><meta name="keywords" content="生活,旅行,思考,代码,博客"><meta name="author" content="Mark,niwei0203@icloud.com"><meta name="copyright" content="Mark"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="http://yoursite.com/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="website"><meta property="og:title" content="Maze Runner"><meta property="og:url" content="http://yoursite.com/"><meta property="og:site_name" content="Maze Runner"><meta property="og:description" content="Runner_maze"><meta property="og:image" content="http://yoursite.com/img/avatar.jpg"><meta property="article:published_time" content="2020-08-03T15:42:02.423Z"><meta property="article:modified_time" content="2020-08-03T15:42:02.423Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
 
-block content
-  include ./includes/mixins/post-ui.pug
-  #recent-posts.recent-posts
-    +postUI
-    include includes/pagination.pug
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = '2'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days',
+  runtime: true,
+  copyright: {"limitCount":50,"languages":{"author":"Author: Mark","link":"Link: ","source":"Source: Maze Runner","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  ClickShowText: {"text":"I,LOVE,YOU","fontSize":"15px"},
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"Press","message_next":"to bookmark this page"},"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false,
+  postUpdate: '2020-08-03 23:42:02'
+}</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Maze Runner" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">20</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">13</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">Categories</div><div class="length_num">5</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="color"></div><header class="full_page" id="page-header" style="background-image: url(https://tva1.sinaimg.cn/large/007S8ZIlly1ghdzglqzusj31hc0u0b29.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Maze Runner</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site_title">Maze Runner</h1><div id="site_subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/Mark12a" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:niwei0203@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll_down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/03/26/Hello-World%EF%BC%81/" title="Hello, World！">     <img class="post_bg" data-lazy-src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe1mkgu8qj31900u0npf.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello, World！"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/26/Hello-World%EF%BC%81/" title="Hello, World！">Hello, World！</a><div class="article-meta-wrap"><span class="article-meta"><i class="fas fa-thumbtack article-meta__icon sticky"></i><span class="sticky">Sticky</span><span class="article-meta__separator">|</span></span><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-03-26T12:16:19.000Z" title="Created 2020-03-26 20:16:19">2020-03-26</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a></span></div><div class="content">写在前面为什么建这个站呢？
+
+
+
+大概是因为每次搜一些乱七八糟的东西都能看到别人写的自己的总结，自己的想法
+
+然后尝试着用了用简书，发现不好用，界面我也不喜欢
+
+之前记笔记用one note，真难用，还不支持MarkDown，太丑了，就算全平台我也不能接受，垃圾玩意儿
+
+寒假看了看丸子入的网站，觉得挺好玩，就有点想搞了。但是毕竟我是菜鸡，不像丸子入大神会用Wordpress，我就搞搞Hexo玩一玩就可以了
+
+好吧我编不下去了，其实就是疫情在家，我闷得慌，天天不好好学习，天天打游戏看剧（摩登家庭我都看完四季了），然后想想看，不如直接就写个自己的博客网站，自己玩
+
+
+​    就像丸子入说的，反正就只有我的狐朋狗友才会来看这么无聊的玩意儿，我就瞎jb写写自己的狗屁想法，大家乐呵一下就好了。但是总归自己管的，比较好玩，也有动力，主题看不惯了我也可以换，就 挺好的 嗯！
+​    但是！我还是超级希望能够看到大家的评论，听听看大家的想法，交流一下我感觉还是挺好的！超级期待大家的评论！
+​    就这样吧，看我这个懒惰的人什么时候停更【摊手.jpg】
+​    要是我停更了还有人想看，欢迎骂我， ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/06/04/%E8%BF%91%E6%97%A5%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/" title="近日胡思乱想">     <img class="post_bg" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="近日胡思乱想"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/06/04/%E8%BF%91%E6%97%A5%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/" title="近日胡思乱想">近日胡思乱想</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-06-04T15:51:12.000Z" title="Created 2020-06-04 23:51:12">2020-06-04</time></span></div><div class="content"></div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/04/26/Leetcode-P862/" title="Leetcode-P862">     <img class="post_bg" data-lazy-src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe1grpfvvj31900u0kjm.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Leetcode-P862"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/26/Leetcode-P862/" title="Leetcode-P862">Leetcode-P862</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-04-26T08:41:48.000Z" title="Created 2020-04-26 16:41:48">2020-04-26</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%88%B7OJ/">刷OJ</a></span></div><div class="content">题目简介
+*描述: *
+返回 A 的最短的非空连续子数组的长度，该子数组的和至少为 K 。
+如果没有和至少为 K 的非空子数组，返回 -1 。
+
+1 &lt;= A.length &lt;= 50000
+-10 ^ 5 &lt;= A[i] &lt;= 10 ^ 5
+1 &lt;= K &lt;= 10 ^ 9
+
+
+
+实例：
+
+输入：A = [1], K = 1输出：1
+输入：A = [1,2], K = 4输出：-1
+输入：A = [2,-1,2], K = 3
+输出：3
+
+
+思路思路1​    第一种当然就是直接暴力搜索，不过这样的话，复杂度会直接上升到O(n*n)，但是可以通过90%的样例
+​    代码就不写了，理解就OK
+思路2错误想法​    除了暴力搜索的方案之外，我还想到，用两个指针同向而行，这两个指针之间确定了一个子数组，先移动右指针，每当满足条件，我们就试着移动左指针，到条件不满足就停止，就好像一个 滑动窗口 一样，但是这个做法其实是错误的！
+​    比如测试样例为 [1,-100,1,2] 3，如果按上述方法来做，会找不到答案。原因在于，你无法确定这两个指针当中 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/04/25/LeetCode-P239/" title="Leetcode-P239">     <img class="post_bg" data-lazy-src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe1h9mnjnj31900u04qv.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Leetcode-P239"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/25/LeetCode-P239/" title="Leetcode-P239">Leetcode-P239</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-04-25T14:37:26.000Z" title="Created 2020-04-25 22:37:26">2020-04-25</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%88%B7OJ/">刷OJ</a></span></div><div class="content">题目简介
+*描述: *
+给定一个数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。
+返回滑动窗口中的最大值。
+
+1 &lt;= nums.length &lt;= 10^5
+-10^4 &lt;= nums[i] &lt;= 10^4
+1 &lt;= k &lt;= nums.lengt`
+
+
+
+实例：
+输入：nums &#x3D; [1,3,-1,-3,5,3,6,7] k &#x3D; 3输出：[3,3,5,5,6,7] 
+
+思路思路1最直接的想法当然是直接暴力解决就可以，复杂度为O(n*k)，但是无法通过所有的样例
+代码：（我没有检查对不对，作为参考即可）
+class Solution &#123;public:    vector&lt;int&gt; maxSlidingWindow(vector&lt;int&gt;&amp; nums, int k) &#123;        vector&lt;int&gt; res;        for (int i=0; i&lt;n ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/04/23/Viijos%20--%204-23/" title="Vijos--4.23">     <img class="post_bg" data-lazy-src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe1im002kj317o0u04qq.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vijos--4.23"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/23/Viijos%20--%204-23/" title="Vijos--4.23">Vijos--4.23</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-04-23T15:02:42.000Z" title="Created 2020-04-23 23:02:42">2020-04-23</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%88%B7OJ/">刷OJ</a></span></div><div class="content">P1282 &amp; P1131 &amp; P1090 &amp; P1307 &amp; P1095P1282
+*描述: *
+一共有n个人（以1–n编号）向佳佳要照片，而佳佳只能把照片给其中的k个人。佳佳按照与他们的关系好坏的程度给每个人赋予了一个初始权值W[i]。然后将初始权值从大到小进行排序，每人就有了一个序号D[i]（取值同样是1–n）。按照这个序号对10取模的值将这些人分为10类。也就是说定义每个人的类别序号C[i]的值为(D[i]-1) mod 10 +1，显然类别序号的取值为1–10。第i类的人将会额外得到E[i]的权值。你需要做的就是求出加上额外权值以后，最终的权值最大的k个人，并输出他们的编号。在排序中，如果两人的W[i]相同，编号小的优先。
+n&lt;=50 000，k&lt;=2000，给出的所有正整数都不超过32767。
+
+
+输入:
+第一行输出用空格隔开的两个整数，分别是n和k。
+第二行给出了10个正整数，分别是E[1]到E[10]。
+第三行给出了n个正整数，第i个数表示编号为i的人的权值W[i]。
+输出:
+只需输出一行用空格隔开的k个整数，分别表示最终的W ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/04/14/%E6%AD%A3%E5%88%99%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95/" title="正则文法与上下文无关文法">     <img class="post_bg" data-lazy-src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe186u5wjj318y0u04qp.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="正则文法与上下文无关文法"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/14/%E6%AD%A3%E5%88%99%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95/" title="正则文法与上下文无关文法">正则文法与上下文无关文法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-04-14T14:26:48.000Z" title="Created 2020-04-14 22:26:48">2020-04-14</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div><div class="content">正则文法有时一个正则表达式很复杂，我们希望能够把这个正则表达式用记号记下来，以便以后使用，于是就有了正则定义（Regular Definitions）：设Σ是符号表，如果有一系列的定义：    d1 → r1    d2 → r2        …    dn→ rn并且：    任一个di都是一个新的符号，它既不属于Σ，也不属于{d1,d2,d3,…,d(i-1)}    任一个ri都是一个正则表达式，能够由符号表Σ以及{d1,d2,d3,…,d(i-1)}所表示这样就构成了一组正则表达式定义。
+
+
+
+
+上下文无关文法组成要素：
+
+一个终结符的有限集（A set of terminal symbols），构成文法的最基本的字符就是这个文法的终结符，例如- 一个能够产生个位数的文法规则digit –&gt; 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9，则数字0～9就是这个文法的终结符，一个能够产生变量名的文法规则variable –&gt; (‘A’-‘Z’ | ‘a’-‘z’) *((‘A’-‘Z’ | ‘a’-‘z’ | ‘0’-‘9’)，则所有的英 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/04/10/%E5%90%84%E7%A7%8D%E5%B7%A5%E5%85%B7%E7%AB%99/" title="各种工具站">     <img class="post_bg" data-lazy-src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe14ue48zj31960u04ji.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="各种工具站"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/04/10/%E5%90%84%E7%A7%8D%E5%B7%A5%E5%85%B7%E7%AB%99/" title="各种工具站">各种工具站</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-04-10T09:22:33.000Z" title="Created 2020-04-10 17:22:33">2020-04-10</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F/">乱七八糟</a></span></div><div class="content">YouTube
+YouTube视频下载
+如果能翻墙的话：y2mate，findYouTube
+不能翻墙的话。。。暂时还没找到
+
+
+
+
+
+
+YouTube字幕下载
+zhuwei（可以选择多种格式的字幕文件）
+
+
+
+字幕
+字幕格式转换
+Convert/4get
+
+
+
+百度文库
+百度文库下载
+30文库，免费的一天只有两篇
+先在这里拿到注册账号
+然后在这里输入之后进行下载
+OK👌
+
+
+
+
+
+公众号
+Markdown写公众号
+我也不知道叫啥 感觉还是Markdown比较舒适
+Md2All 和上面类似，风格不同
+
+
+
+PPT相关
+ppt模板下载
+
+yppt 免费的模板下载！
+
+
+ppt导航站
+
+HiPPTer 这真的是见过的最全导航站了，我感觉这个大类可以删了只留这一个了
+
+
+
+统计数据
+Trade Economics 各个国家的经济数据
+Knoema 这个比较分散，各个方面都有，但是每一个方面不是特别详细
+
+看剧
+美剧
+91美剧网
+爱美剧
+天天美剧
+
+
+
+镜像网站
+谷歌镜像
+浙大的镜像 问题答案：心灵之约 水朝夕 csxy@123
+HiQQ
+我也不知道叫什么名字-1
+我也不知道叫什么名字-2
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/03/31/Hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B-%E4%B8%8B/" title="Hexo-博客搭建历程-下">     <img class="post_bg" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo-博客搭建历程-下"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/31/Hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B-%E4%B8%8B/" title="Hexo-博客搭建历程-下">Hexo-博客搭建历程-下</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-03-31T14:47:12.000Z" title="Created 2020-03-31 22:47:12">2020-03-31</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span></div><div class="content">1 Valine简介​    继续上次的搭建历程，主要是进行留言板的搭建，我看了不少的留言板，包括来比力、Gittalk等等，最后还是觉得Valine比较简约好看，而且查了一下，Ayer主题也支持，就决定用这个了。
+
+
+2 LeanCloud基本应用创建2.1 注册LeanCloud​    首先去LeanCloud官网进行注册一个账号
+
+2.2 创建新的应用​    在登陆之后可以看到下图中的这样一个界面，点击红框中的“创建应用”。
+
+​    然后在弹出框中填写你要创建的名称即可，使用免费的开发版就OK了
+
+2.3 获取应用的KEY</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/03/26/Markdown%E8%AF%AD%E6%B3%95/" title="Markdown语法">     <img class="post_bg" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Markdown语法"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/26/Markdown%E8%AF%AD%E6%B3%95/" title="Markdown语法">Markdown语法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-03-26T13:07:14.000Z" title="Created 2020-03-26 21:07:14">2020-03-26</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div><div class="content">一级标题
+1. 斜体和粗体使用 * 和 ** 表示斜体和粗体。
+示例：
+这是 斜体，这是 粗体。
+
+
+2. 分级标题使用 === 表示一级标题，使用 — 表示二级标题。
+示例：
+这是一个一级标题&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;这是一个二级标题--------------------------------------------------### 这是一个三级标题
+
+你也可以选择在行首加井号表示不同级别的标题 (H1-H6)，例如：# H1, ## H2, ### H3，#### H4。
+3. 外链接使用 [描述](链接地址) 为文字增加外链接。
+示例：
+这是去往 本人博客 的链接。
+
+4. 无序列表使用 *，+，- 表示无序列表。
+示例：
+
+无序列表项 一
+无序列表项 二
+无序列表项  ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/03/26/Hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B-%E4%B8%8A/" title="Hexo 博客搭建历程(上)">     <img class="post_bg" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo 博客搭建历程(上)"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/03/26/Hexo-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8E%86%E7%A8%8B-%E4%B8%8A/" title="Hexo 博客搭建历程(上)">Hexo 博客搭建历程(上)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2020-03-26T12:05:10.000Z" title="Created 2020-03-26 20:05:10">2020-03-26</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span></div><div class="content">Hexo的简洁、神秘让我跃跃欲试，在使用过程中遇到了很多问题，整理此文，一是方便其他技术人搭建自己的博客，二是给自己的学习之旅做个总结。本文未完结，欢迎star、fork，如果有错误，请不吝指出。我搭建的博客地址：mark12a.github.io然后鉴于GitHub国内太慢，我又放到了Gitee上面mazerunner.gitee.io二者都可以访问
+
+
+1 Hexo介绍Hexo是基于NodeJs的静态博客框架，简单、轻量，其生成的静态网页可以托管在Github和Heroku上。
+
+超快速度
+支持MarkDown
+一键部署
+丰富的插件
+
+
+下面以我的博客为例，mark12a.github.io
+
+2 环境准备2.1 安装node.js去nodejs官网下载对应系统的安装包，按提示安装。
+检验安装成功：
+$ node -v
+
+2.2 安装hexo$ npm install hexo-cli -g
+
+注意：Mac系统，则需要  
+$ sudo npm install hexo-cli -g
+
+2.3 安装git很抱歉，但是我真的不想写了，去找教程吧，耶✌️
+3 利用Hexo搭建一个博客3 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Mark</div><div class="author-info__description">Runner_maze</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives"><div class="headline">Articles</div><div class="length_num">20</div></a></div><div class="card-info-data-item is-center">      <a href="/tags"><div class="headline">Tags</div><div class="length_num">13</div></a></div><div class="card-info-data-item is-center"><a href="/categories"><div class="headline">Categories</div><div class="length_num">5</div></a></div></div><a class="button--animated" id="card-info-btn" href="https://github.com/Mark12a" target="_blank" rel="noopener"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Mark12a" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:niwei0203@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">小破站被您看到啦！！！</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-recent-item"><div class="aside-recent-post"><a class="aside-post-cover" href="/2020/06/04/%E8%BF%91%E6%97%A5%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/" title="近日胡思乱想"><img class="aside-post-bg" data-lazy-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="近日胡思乱想"/></a><div class="aside-post-info"><a class="aside-post-title" href="/2020/06/04/%E8%BF%91%E6%97%A5%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/" title="近日胡思乱想">近日胡思乱想</a><time class="aside-post_meta post-meta-date" datetime="2020-06-04T15:51:12.000Z" title="Created 2020-06-04 23:51:12">2020-06-04</time></div></div><div class="aside-recent-post"><a class="aside-post-cover" href="/2020/04/26/Leetcode-P862/" title="Leetcode-P862"><img class="aside-post-bg" data-lazy-src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe1grpfvvj31900u0kjm.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Leetcode-P862"/></a><div class="aside-post-info"><a class="aside-post-title" href="/2020/04/26/Leetcode-P862/" title="Leetcode-P862">Leetcode-P862</a><time class="aside-post_meta post-meta-date" datetime="2020-04-26T08:41:48.000Z" title="Created 2020-04-26 16:41:48">2020-04-26</time></div></div><div class="aside-recent-post"><a class="aside-post-cover" href="/2020/04/25/LeetCode-P239/" title="Leetcode-P239"><img class="aside-post-bg" data-lazy-src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe1h9mnjnj31900u04qv.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Leetcode-P239"/></a><div class="aside-post-info"><a class="aside-post-title" href="/2020/04/25/LeetCode-P239/" title="Leetcode-P239">Leetcode-P239</a><time class="aside-post_meta post-meta-date" datetime="2020-04-25T14:37:26.000Z" title="Created 2020-04-25 22:37:26">2020-04-25</time></div></div><div class="aside-recent-post"><a class="aside-post-cover" href="/2020/04/23/Viijos%20--%204-23/" title="Vijos--4.23"><img class="aside-post-bg" data-lazy-src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe1im002kj317o0u04qq.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vijos--4.23"/></a><div class="aside-post-info"><a class="aside-post-title" href="/2020/04/23/Viijos%20--%204-23/" title="Vijos--4.23">Vijos--4.23</a><time class="aside-post_meta post-meta-date" datetime="2020-04-23T15:02:42.000Z" title="Created 2020-04-23 23:02:42">2020-04-23</time></div></div><div class="aside-recent-post"><a class="aside-post-cover" href="/2020/04/14/%E6%AD%A3%E5%88%99%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95/" title="正则文法与上下文无关文法"><img class="aside-post-bg" data-lazy-src="https://tva1.sinaimg.cn/large/007S8ZIlly1ghe186u5wjj318y0u04qp.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="正则文法与上下文无关文法"/></a><div class="aside-post-info"><a class="aside-post-title" href="/2020/04/14/%E6%AD%A3%E5%88%99%E6%96%87%E6%B3%95%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95/" title="正则文法与上下文无关文法">正则文法与上下文无关文法</a><time class="aside-post_meta post-meta-date" datetime="2020-04-14T14:26:48.000Z" title="Created 2020-04-14 22:26:48">2020-04-14</time></div></div></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>Categories</span></div><ul class="card-category-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E4%B9%B1%E4%B8%83%E5%85%AB%E7%B3%9F/"><span class="card-category-list-name">乱七八糟</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%88%B7OJ/"><span class="card-category-list-name">刷OJ</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0/"><span class="card-category-list-name">学习</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/"><span class="card-category-list-name">技术</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E9%9A%8F%E7%AC%94/"><span class="card-category-list-name">随笔</span><span class="card-category-list-count">5</span></a></li>
+                       
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href='/tags/Hexo/' style='font-size:20px; color:rgb(148, 97, 124)'>Hexo</a><a href='/tags/LeetCode/' style='font-size:20px; color:rgb(91, 176, 192)'>LeetCode</a><a href='/tags/Vijos/' style='font-size:19px; color:rgb(82, 88, 190)'>Vijos</a><a href='/tags/%E5%8D%9A%E5%AE%A2/' style='font-size:16px; color:rgb(94, 29, 37)'>博客</a><a href='/tags/%E5%B7%A5%E5%85%B7/' style='font-size:19px; color:rgb(118, 71, 71)'>工具</a><a href='/tags/%E6%91%84%E5%BD%B1/' style='font-size:16px; color:rgb(68, 34, 133)'>摄影</a><a href='/tags/%E6%B5%8B%E8%AF%95/' style='font-size:19px; color:rgb(110, 52, 86)'>测试</a><a href='/tags/%E7%94%B5%E5%BD%B1/' style='font-size:19px; color:rgb(137, 149, 154)'>电影</a><a href='/tags/%E7%9E%8E%E6%83%B3/' style='font-size:18px; color:rgb(21, 76, 156)'>瞎想</a><a href='/tags/%E7%AB%99%E7%82%B9/' style='font-size:18px; color:rgb(143, 72, 106)'>站点</a><a href='/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/' style='font-size:18px; color:rgb(115, 66, 109)'>编译原理</a><a href='/tags/%E9%98%85%E8%AF%BB/' style='font-size:20px; color:rgb(148, 55, 184)'>阅读</a><a href='/tags/%E9%9A%8F%E7%AC%94/' style='font-size:19px; color:rgb(93, 147, 31)'>随笔</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/06/"><span class="card-archive-list-date">June 2020</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/04/"><span class="card-archive-list-date">April 2020</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/03/"><span class="card-archive-list-date">March 2020</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/12/"><span class="card-archive-list-date">December 2019</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/07/"><span class="card-archive-list-date">July 2019</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/06/"><span class="card-archive-list-date">June 2019</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/04/"><span class="card-archive-list-date">April 2019</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2019/03/"><span class="card-archive-list-date">March 2019</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item more is-center"><a class="card-archive-list-link-more" href="/archives">
+              <span>More</span><i class="fas fa-angle-right"  ></i></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="webinfo-article-name">Article :</div><div class="webinfo-article-count">20</div></div><div class="webinfo-item"><div class="webinfo-runtime-name">Run time :</div><div class="webinfo-runtime-count" id="webinfo-runtime-count" publish_date="26/3/2020 21:00:00">     </div></div><div class="webinfo-item"><div class="webinfo-site-wordcount-name">Total Count :</div><div class="webinfo-site-wordcount">23.9k</div></div><div class="webinfo-item">      <div class="webinfo-site-uv-name">UV :</div><div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="webinfo-site-name">PV :</div><div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div></div></div></div></div></div></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By Mark</div><div class="framework-info"><span>Framework </span><a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></section><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "给时光以生命&#44而不是给生命以时光".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '给时光以生命&#44而不是给生命以时光'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') subtitleType()
+  else $.getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js', subtitleType)
+} else {
+  subtitleType()
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/js/third-party/ClickShowText.js" async="async"></script></div></body></html>

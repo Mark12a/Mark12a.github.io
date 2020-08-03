@@ -234,7 +234,7 @@
 &gt;​    C接着从1开始报数
 &gt;​    接着轮到A报数，他报2。也被杀死了。
 &gt;​    最终胜利者是C</code></pre><h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><h4 id="普通方案"><a href="#普通方案" class="headerlink" title="普通方案"></a>普通方案</h4><p>​    刚学数据结构的时候，我们可能用链表的方法去模拟这个过程，N个人看作是N个链表节点，节点1指向节点2，节点2指向节点3，……，节点N-1指向节点N，节点N指向节点1，这样就形成了一个环。然后从节点1开始1、2、3……往下报数，每报到M，就把那个节点从环上删除。下一个节点接着从1开始报数。最终链表仅剩一个节点。它就是最终的胜利者。</p>
-<img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ge44dmtnuuj30jg0dmwf1.jpg" width = "300" height = "200" alt="图片名称" align=center />
+<img src= "/img/loading.gif" data-lazy-src="https://tva1.sinaimg.cn/large/007S8ZIlly1ge44dmtnuuj30jg0dmwf1.jpg" width = "300" height = "200" alt="图片名称" align=center />
 
 <h4 id="递推"><a href="#递推" class="headerlink" title="递推"></a>递推</h4><p>约瑟夫环是一个经典的数学问题，我们不难发现这样的依次报数，似乎有规律可循。为了方便导出递推式，我们重新定义一下题目。<br>问题： N个人编号为1，2，……，N，依次报数，每报到M时，杀掉那个人，求最后胜利者的编号。</p>
 <p>这边我们先把结论抛出了。之后带领大家一步一步的理解这个公式是什么来的。<br>递推公式：</p>
@@ -249,7 +249,7 @@
 <p><strong>注：</strong>理解这个递推式的核心在于关注胜利者的下标位置是怎么变的。每杀掉一个人，其实就是把这个数组向前移动了M位。然后逆过来，就可以得到这个递推式。</p>
 <p>是不是有点明白了？</p>
 <p>再上一张图，就更明白了：</p>
-<img src="https://tva1.sinaimg.cn/large/007S8ZIlly1ge44icek00j30vw0jidhk.jpg" style="zoom:40%" />
+<img src= "/img/loading.gif" data-lazy-src="https://tva1.sinaimg.cn/large/007S8ZIlly1ge44icek00j30vw0jidhk.jpg" style="zoom:40%" />
 
 <p>忽略绿色的一行，黄色的表示要被杀的，每一行表示现在存在的人的编号</p>
 <p>如果将上面表格的每一行看成数组，这个公式描述的是：幸存者在这一轮的下标位置</p>
@@ -429,11 +429,11 @@
 <a id="more"></a>
 
 <h2 id="2-LeanCloud基本应用创建"><a href="#2-LeanCloud基本应用创建" class="headerlink" title="2 LeanCloud基本应用创建"></a>2 LeanCloud基本应用创建</h2><h3 id="2-1-注册LeanCloud"><a href="#2-1-注册LeanCloud" class="headerlink" title="2.1 注册LeanCloud"></a>2.1 注册LeanCloud</h3><p>​    首先去<a href="https://leancloud.cn/" target="_blank" rel="noopener">LeanCloud官网</a>进行注册一个账号</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gddi1ufzhnj30lq0f90tg.jpg" alt=""></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://tva1.sinaimg.cn/large/00831rSTgy1gddi1ufzhnj30lq0f90tg.jpg" alt=""></p>
 <h3 id="2-2-创建新的应用"><a href="#2-2-创建新的应用" class="headerlink" title="2.2 创建新的应用"></a>2.2 创建新的应用</h3><p>​    在登陆之后可以看到下图中的这样一个界面，点击红框中的“创建应用”。</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTgy1gddi3bo8zzj30lp0bo0ub.jpg" alt=""></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://tva1.sinaimg.cn/large/00831rSTgy1gddi3bo8zzj30lp0bo0ub.jpg" alt=""></p>
 <p>​    然后在弹出框中填写你要创建的名称即可，使用免费的开发版就OK了</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gddi4tnx94j30lx0glgmr.jpg" alt=""></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://tva1.sinaimg.cn/large/00831rSTly1gddi4tnx94j30lx0glgmr.jpg" alt=""></p>
 <h3 id="2-3-获取应用的KEY"><a href="#2-3-获取应用的KEY" class="headerlink" title="2.3 获取应用的KEY"></a>2.3 获取应用的KEY</h3>]]></content>
       <categories>
         <category>技术</category>
@@ -460,7 +460,7 @@
 <h3 id="3-外链接"><a href="#3-外链接" class="headerlink" title="3. 外链接"></a>3. 外链接</h3><p>使用 [描述](链接地址) 为文字增加外链接。</p>
 <p>示例：</p>
 <p>这是去往 <a href="https://mazerunner.gitee.io/" target="_blank" rel="noopener">本人博客</a> 的链接。</p>
-<p><img src="https://n1-q.mafengwo.net/s15/M00/65/BB/CoUBGV3brtOAMKOdAAsHBZ8nyQk791.jpg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt=""></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://n1-q.mafengwo.net/s15/M00/65/BB/CoUBGV3brtOAMKOdAAsHBZ8nyQk791.jpg?imageMogr2%2Fthumbnail%2F1360x%2Fstrip%2Fquality%2F90" alt=""></p>
 <h3 id="4-无序列表"><a href="#4-无序列表" class="headerlink" title="4. 无序列表"></a>4. 无序列表</h3><p>使用 *，+，- 表示无序列表。</p>
 <p>示例：</p>
 <ul>
@@ -487,7 +487,7 @@
 <p>示例：</p>
 <pre><code>这是一个代码块，此行左侧有四个不可见的空格。</code></pre><h3 id="9-插入图像"><a href="#9-插入图像" class="headerlink" title="9.  插入图像"></a>9.  插入图像</h3><p>使用 ![描述](图片链接地址) 插入图像。</p>
 <p>示例：</p>
-<p><img src="https://www.zybuluo.com/static/img/my_head.jpg" alt="我的头像"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://www.zybuluo.com/static/img/my_head.jpg" alt="我的头像"></p>
 <h1 id="Cmd-Markdown-高阶语法手册"><a href="#Cmd-Markdown-高阶语法手册" class="headerlink" title="Cmd Markdown 高阶语法手册"></a>Cmd Markdown 高阶语法手册</h1><h3 id="1-内容目录"><a href="#1-内容目录" class="headerlink" title="1. 内容目录"></a>1. 内容目录</h3><p>在段落中填写 <code>[TOC]</code> 以显示全文内容的目录结构。</p>
 <p>[TOC]</p>
 <h3 id="2-标签分类"><a href="#2-标签分类" class="headerlink" title="2. 标签分类"></a>2. 标签分类</h3><p>在编辑区任意行的列首位置输入以下代码给文稿标签：</p>
@@ -852,7 +852,7 @@
 
 <!-- ![avatar.jpg](https://tva1.sinaimg.cn/large/00831rSTgy1gd7dlkebs3j30zo0u07wh.jpg) -->
 
-<img src="https://tva1.sinaimg.cn/large/00831rSTgy1gd7dlkebs3j30zo0u07wh.jpg" alt="avatar" width="300" style="border-radius:10%"/>
+<img src= "/img/loading.gif" data-lazy-src="https://tva1.sinaimg.cn/large/00831rSTgy1gd7dlkebs3j30zo0u07wh.jpg" alt="avatar" width="300" style="border-radius:10%"/>
 
 ]]></content>
       <tags>
@@ -900,7 +900,7 @@
 <p><a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank" rel="noopener">Ayer</a> 是一个干净且优雅的Hexo主题，自带响应式，加载速度很快，该有的功能都有，可配置项很多，非常适合作为你的博客主题，主题内还附送了6张精美的高清壁纸。欢迎使用和Star支持，如果你在使用过程中有任何疑问或者建议，欢迎联系我！如果你的博客采用了本主题，欢迎在下面评论区留下地址~</p>
 </blockquote>
 <p><a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank" rel="noopener">Ayer</a> 在马来语中是“水”的意思，在西班牙语中是“昨天”的意思。</p>
-<p><img src="https://pic.downk.cc/item/5e739724e83c3a1e3ab53941.jpg" alt="hexo-theme-ayer"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://pic.downk.cc/item/5e739724e83c3a1e3ab53941.jpg" alt="hexo-theme-ayer"></p>
 <p><a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank" rel="noopener">GitHub地址</a></p>
 <p><a href="https://gitee.com/shen-yu/hexo-theme-ayer" target="_blank" rel="noopener">国内镜像</a></p>
 <p><a href="https://shen-yu.gitee.io" target="_blank" rel="noopener">效果预览</a></p>
@@ -925,15 +925,15 @@
 <li>支持Github Ribbons</li>
 </ol>
 <p>如果想体验手机端浏览效果，可以扫一下二维码：</p>
-<p><img src="https://pic.downk.cc/item/5e739676e83c3a1e3ab4b372.jpg" alt="手机端效果"> </p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://pic.downk.cc/item/5e739676e83c3a1e3ab4b372.jpg" alt="手机端效果"> </p>
 <h1 id="打赏"><a href="#打赏" class="headerlink" title="打赏"></a>打赏</h1><p>本主题完全开源且免费，目前由我一个人维护，如果你觉得主题不错，你可以选择继续白嫖，也可以选择适当打赏我，不在于金额多少，而是能让我更有动力去维护这个主题。打赏请备注说明，谢谢~</p>
 <div style="width:100%;text-align:center;font-weight:bold">
 <span style="width:30%;display:inline-block">
 微信
-<img src="https://pic.downk.cc/item/5e75c6079d7d586a54ce7611.png" alt="wechat" style="width:100%"></span>
+<img src= "/img/loading.gif" data-lazy-src="https://pic.downk.cc/item/5e75c6079d7d586a54ce7611.png" alt="wechat" style="width:100%"></span>
 <span style="width:30%;;display:inline-block">
 支付宝
-<img src="https://pic.downk.cc/item/5e75c6079d7d586a54ce7613.jpg" alt="alipay" style="width:100%"></span>
+<img src= "/img/loading.gif" data-lazy-src="https://pic.downk.cc/item/5e75c6079d7d586a54ce7613.jpg" alt="alipay" style="width:100%"></span>
 </div>
 
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 国内用户如果速度较慢，可以把github地址替换为：https://gitee.com/shen-yu/hexo-theme-ayer.git</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/Shen-Yu/hexo-theme-ayer.git themes/ayer</span><br></pre></td></tr></table></figure>
@@ -1007,7 +1007,7 @@
 <h2 id="三-为什么修改了配置却没有效果"><a href="#三-为什么修改了配置却没有效果" class="headerlink" title="三.为什么修改了配置却没有效果"></a>三.为什么修改了配置却没有效果</h2><p>建议每次生成站点或部署之前都用 <code>hexo clean</code> 命令清理一下缓存，另外你可能还需要刷新一下。</p>
 <h2 id="四-怎么修改大标题和站点信息"><a href="#四-怎么修改大标题和站点信息" class="headerlink" title="四.怎么修改大标题和站点信息"></a>四.怎么修改大标题和站点信息</h2><p>站点配置文件<code>_config.yml</code>是hexo站点根目录下的主配置文件(还不知道是哪里的，自己google)，注意：别和<code>ayer</code>主题目录下的<code>_config.yml</code>搞混了。</p>
 <p>修改网站各种资料，例如标题、副标题和邮箱等个人资料，请修改站点根目录下的<code>_config.yml</code></p>
-<p>以我的博客为例：<br><img src="https://pic.downk.cc/item/5e75c69c9d7d586a54cf119d.jpg" alt=""></p>
+<p>以我的博客为例：<br><img src= "/img/loading.gif" data-lazy-src="https://pic.downk.cc/item/5e75c69c9d7d586a54cf119d.jpg" alt=""></p>
 <h2 id="五-怎么添加百度或谷歌统计"><a href="#五-怎么添加百度或谷歌统计" class="headerlink" title="五.怎么添加百度或谷歌统计"></a>五.怎么添加百度或谷歌统计</h2><h3 id="百度统计"><a href="#百度统计" class="headerlink" title="百度统计"></a>百度统计</h3><p>在ayer的config配置里的<code>baidu_analytics</code>填上百度统计代码中的hm.js问好后面那一串东西</p>
 <h3 id="谷歌统计"><a href="#谷歌统计" class="headerlink" title="谷歌统计"></a>谷歌统计</h3><p>在ayer的config配置里的<code>google_analytics</code>填上谷歌统计代码的跟踪ID，即UA值(包含UA)</p>
 <h2 id="六-怎么查看文章的访问量"><a href="#六-怎么查看文章的访问量" class="headerlink" title="六.怎么查看文章的访问量"></a>六.怎么查看文章的访问量</h2><p>在ayer的config配置里有<code>busuanzi</code>选项，默认设置为<code>enable:true</code>，就开启了站点访问量的统计，站点尾部左下角的<code>PV</code>代表了当前页的访问次数，<code>UV</code>代表了当前站点的访问人数。注意：不蒜子统计是根据当前域名来统计的，你在本地启动的时候由于是localhost，所以数字会很大，部署到线上之后就会根据域名重新统计。</p>
@@ -1039,11 +1039,11 @@
 <p>​    </p>
 <p>​    这部电影展现了导演极多的思考，从政治制度到人性，从新闻到生活</p>
 <p><strong>关于政治</strong>，“北方之火”在上台之初的选举当中，并没有占据压倒性的优势。为赢得最终的选举，苏特勒不惜制造大规模的中毒案件，造成了极大的社会恐慌，而正是因为这种恐慌，导致提出的极权方案得以实施，使得“北方之火”稳稳的站到了政治舞台中央，主导整个国家的政治。苏特勒许诺将带来秩序和和平，作为交换，民众需要牺牲言语并保持沉默和服从。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006tNc79ly1g4o4hn7ikwj30sg0g0q44.jpg" alt="“苏特勒”的图片搜索结果"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="http://ww1.sinaimg.cn/large/006tNc79ly1g4o4hn7ikwj30sg0g0q44.jpg" alt="“苏特勒”的图片搜索结果"></p>
 <p>​    在《1984》中亦是如此，“战争即和平”，将战争常态化，并伪造生活物资短缺，时不时还拉响防空警报，并设立秘密警察机构，以清除“对国家危害的人”为借口，清扫所有不同政见的民众，以此激发民众心中的恐惧，来达到自身长久而稳定的统治。</p>
 <p>​    这与我们所熟知的世界何其相似，我们会发现无数政府，为了化解国内的政治矛盾，掩盖自身的政策问题，于是树立起一个国家公敌，利用民众对于混乱和敌人的恐惧，迫使民众接受自己提出的议案和政策。日本，就是一个典型，通过对于东亚中国和朝鲜危机的渲染，试图通过这样方式，达到自身修宪的政治目标。</p>
-<p><strong>关于新闻</strong>，我曾听过这样一句话，“新闻只是让你看到了有些人让你想看到的世界”，无数的新闻媒体标榜着自己的客观与真实，但是都在为背后的金主写着利益相关的文字。<img src="http://ww3.sinaimg.cn/large/006tNc79ly1g4o4876i47j30rs0bp3zq.jpg" alt="537408-352dcec2b007b540"></p>
-<p>​    影片中的BTN是官方的国营电视台，作为政府的发言人，不断报道着虚假新闻，宣传政府的正面形象，甚至将之前在政府担任高级官员调来进行事件评论，讽刺那些反对政府的行为和人民。但是自从V炸毁老贝利街，却被宣传成定向爆破，我们看见民众开始在电视机面前摇头；在后续V制造的一系列事件当中亦是如此，政府越是拼命掩盖，民众越是一眼识破，从此政府的公信力就开始一点一点丧失，最后已经无人相信电视台所播放的内容。而当公信力消失的时刻，离政府的垮台，也就不远了。<img src="http://ww1.sinaimg.cn/large/006tNc79ly1g4o48seqlwj30rs0dlgm9.jpg" alt="537408-b5c29657f43a5cdb"></p>
+<p><strong>关于新闻</strong>，我曾听过这样一句话，“新闻只是让你看到了有些人让你想看到的世界”，无数的新闻媒体标榜着自己的客观与真实，但是都在为背后的金主写着利益相关的文字。<img src= "/img/loading.gif" data-lazy-src="http://ww3.sinaimg.cn/large/006tNc79ly1g4o4876i47j30rs0bp3zq.jpg" alt="537408-352dcec2b007b540"></p>
+<p>​    影片中的BTN是官方的国营电视台，作为政府的发言人，不断报道着虚假新闻，宣传政府的正面形象，甚至将之前在政府担任高级官员调来进行事件评论，讽刺那些反对政府的行为和人民。但是自从V炸毁老贝利街，却被宣传成定向爆破，我们看见民众开始在电视机面前摇头；在后续V制造的一系列事件当中亦是如此，政府越是拼命掩盖，民众越是一眼识破，从此政府的公信力就开始一点一点丧失，最后已经无人相信电视台所播放的内容。而当公信力消失的时刻，离政府的垮台，也就不远了。<img src= "/img/loading.gif" data-lazy-src="http://ww1.sinaimg.cn/large/006tNc79ly1g4o48seqlwj30rs0dlgm9.jpg" alt="537408-b5c29657f43a5cdb"></p>
 <p>​    只是，如果出现《1984》当中的极端情况，一切发行的信息都可以被控制，一切纸上的历史都可以被改写，一切反对的人都可以被消灭，所有反对的思想都可以被双重思想忽略和无视，我们又该如何呢？</p>
 <p>​    <strong>关于自由</strong>，“自由，自由，多少罪恶假汝之名以行”。在刚开始的电视演讲当中，V将自己包装成正义与自由的象征，但是最终我们发现，这不过是在利用民众的反对心理，达到自身复仇的目的。当Evey发现这一切并向V提出质疑的时候，V最终回应“你不知道他们对我做的事情有多可怕”。或许是被Evey点醒，才会在最后将一列火车炸药的控制权交给了Evey，因为他与这个本应消失的政党和政权，都属于过去那个可怕的时代，新的时代，应当由新的人开启.</p>
 <p>​    而反复提到的11月5日这个纪念日，盖伊·福克斯被烧死的日子，这在V的口中是自由与正义的纪念。然而，当年福克斯想要炸掉英国国会大厦，不过只是极端的宗教思想影响所致，并非自由与正义。</p>
@@ -1052,10 +1052,10 @@
 <blockquote>
 <p>“ 我们被教导要记住思想，而不是人，因为人可能失败，他可能会被捕，他会被杀死，被遗忘，但400年后，思想仍可改变世界。我亲眼目睹了思想的力量，我见过人们以它为名杀戮，或是为了维护它献出生命，但你不能亲吻思想，也不能触摸它或抱着它，思想不会流血，不会感到痛苦，它们没有爱。”</p>
 </blockquote>
-<p><img src="http://ww3.sinaimg.cn/large/006tNc79ly1g4o49kxc9jj30rs0fn0tl.jpg" alt="2704173-e6b9cb8593d4457a">    甚至在这个极权政府看来也是如此，口号<strong>“力量来自团结，团结来自信仰”</strong>，正是最好的体现。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="http://ww3.sinaimg.cn/large/006tNc79ly1g4o49kxc9jj30rs0fn0tl.jpg" alt="2704173-e6b9cb8593d4457a">    甚至在这个极权政府看来也是如此，口号<strong>“力量来自团结，团结来自信仰”</strong>，正是最好的体现。</p>
 <p>​    在最后面对秘密警察头子Creedy的时候，由于V自身的细胞变异，导致他的身体远远强于常人，因而即便身中数颗子弹，他也没有死去，在一场优雅的屠杀之后，只剩下了Creedy一人，Creedy打光了手中所有的子弹，惊恐的叫到“你怎么还没死？”</p>
-<p>​    V答道：“这张面具之下不止是肉体，这张面具之下是一种思想，克里蒂先生，而思想是不怕子弹的。”<img src="http://ww3.sinaimg.cn/large/006tNc79ly1g4o4a0uff1j30g40923yk.jpg" alt="5000449-f2c910b6b607d9b2"></p>
-<p><img src="http://ww4.sinaimg.cn/large/006tNc79ly1g4o49b4ymbj30rs0fnt92.jpg" alt="2704173-98614ad760eceee2"></p>
+<p>​    V答道：“这张面具之下不止是肉体，这张面具之下是一种思想，克里蒂先生，而思想是不怕子弹的。”<img src= "/img/loading.gif" data-lazy-src="http://ww3.sinaimg.cn/large/006tNc79ly1g4o4a0uff1j30g40923yk.jpg" alt="5000449-f2c910b6b607d9b2"></p>
+<p><img src= "/img/loading.gif" data-lazy-src="http://ww4.sinaimg.cn/large/006tNc79ly1g4o49b4ymbj30rs0fnt92.jpg" alt="2704173-98614ad760eceee2"></p>
 <p>​    当思想的种子在亿万人心中埋下，那它注定有一天将会生根发芽，并且使得肉身成为思想的附庸，一切行为将按照思想的意志来进行</p>
 <p>​    最后，<strong>关于人性</strong>，这是一个很宏大而深刻的话题，我谨慎的谈一谈这部电影中我的看法和理解</p>
 <p>​    恐惧，这是一个无法绕开的话题，女主角Evey，从小跟着具有反政府思想的父母，看到了太多的争斗和冲突。她的父母是勇敢的，一个被杀害，一个被抓走。于是Evey明白了，在这个时代，做个“与众不同的人”会遭受什么样的后果，所以她后来也学着和大部分人一样，学着沉默和服从。她不再关心任何大众的，她只想安分守己的过自己的生活。</p>
@@ -1065,11 +1065,11 @@
 <p>   而正是这份遗书，给了Evey真正的力量，坚定着自己的信仰和内心。一个素未谋面的人，却给了Evey这一生从未有过的勇气和爱。那份遗书，不仅仅是一个故事和几句鼓励，它帮助Evey找到了真实的自己。</p>
 <p>​    我们通过面对恐惧，而看到恐惧的真相。然后了解到再深的恐惧，也不过如此，唯一让人恐惧的，只有恐惧本身。我们无法战胜恐惧，只能通过爱去包容，去照亮。真正的爱可以包容一切，因为万事万物的源头都始于此。</p>
 <p>​    于是，Evey不再恐惧，坚定着自己内心的想法，绝不透露V的消息，她真正自由了</p>
-<p>​    最后在雨中的片段，不由得让我想起了《肖申克的救赎》，都是大雨中张开双臂，拥抱着自由和蜕变的自己。<img src="http://ww2.sinaimg.cn/large/006tNc79ly1g4o4av93wej30rs0bkaal.jpg" alt="8808323-574e8058e30664e4"></p>
+<p>​    最后在雨中的片段，不由得让我想起了《肖申克的救赎》，都是大雨中张开双臂，拥抱着自由和蜕变的自己。<img src= "/img/loading.gif" data-lazy-src="http://ww2.sinaimg.cn/large/006tNc79ly1g4o4av93wej30rs0bkaal.jpg" alt="8808323-574e8058e30664e4"></p>
 <p>​    有的时候其实在想，面对苦难和恐惧，这是该一件令人庆幸的事情，通过它们，我们才能发现那个真实的自己，并一步一步坚定地走向他</p>
 <p>​    而对Evey的爱，也改变了V，V开始从复仇之中得到解脱，他已经拥有了更加珍贵的东西，于是他祥和的躺在列车的玫瑰花从中，走向自己的宿命。</p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gd7pc8s2j8j31020f0jso.jpg" alt=""></p>
-<p><img src="https://tva1.sinaimg.cn/large/00831rSTly1gd7pd29y6uj30x00i6ac0.jpg" alt=""></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://tva1.sinaimg.cn/large/00831rSTly1gd7pc8s2j8j31020f0jso.jpg" alt=""></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://tva1.sinaimg.cn/large/00831rSTly1gd7pd29y6uj30x00i6ac0.jpg" alt=""></p>
 <p>​    </p>
 <p>​    在影片开头，V救下Evey之后的自我介绍极其精彩，再配上雨果·维极有磁性的腔调，这段话一直在我脑中浮现</p>
 <p>​    鉴于我认为英文会更加原汁原味，那就展现英文并附中文在后</p>
